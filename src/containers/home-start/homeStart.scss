@@ -1,0 +1,97 @@
+.banner-get-started-heading {
+  padding-top: 50px;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 72px;
+}
+
+.banner-get-started-sub-heading {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.banner-get-started-button {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 600;
+  color: #000000;
+  font-size: 14px;
+  background-color: #d7ff3a;
+  border-radius: 40px;
+  padding: 10px 20px;
+  margin: 0 auto;
+  border: 2px solid #000000;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    height: 12px;
+    width: 12px;
+    background: #000000;
+    display: inline-block;
+    margin-right: 5px;
+    border-radius: 30px;
+  }
+}
+
+.mintNFTButton{
+  color: #000000;
+  text-decoration: none;
+  &:visited{
+    text-decoration: none;
+  color: #000000;
+
+  }
+
+}
+
+@media (max-width:600px) {
+   .banner-get-started-heading {
+  padding-top: 20px;
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+
+  .banner-get-started-sub-heading {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 30px;
+  }
+
+  .banner-get-started-button {
+    padding: 10px 30px;
+    background: #d7ff3a;
+    border: 1px solid #000000;
+    border-radius: 46px;
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    color: #000000;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background: #000000;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+  }
+}

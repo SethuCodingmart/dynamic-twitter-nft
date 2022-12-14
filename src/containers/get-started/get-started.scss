@@ -1,0 +1,205 @@
+.get-started-container{
+  background-color: #202020 !important;
+}
+
+.get-started{
+  background-image: url("../../assets/images/get-started-background-image.svg");
+background-size: cover;
+}
+
+.get-started-on-click-wrapper {
+  padding-top: 50px;
+}
+
+.get-started-on-click-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Manrope";
+  color: #ffffff;
+  font-size: 48px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.get-started-on-click-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 342px;
+  background: #d7ff3a;
+  border: 1px solid #bcbcbc;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.get-started-on-click-box-text {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  color: #202020;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#user_twitter_id {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 600;
+  color: #000000;
+  font-size: 14px;
+  padding: 15px;
+  border: 2px solid #d7ff3a;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+.submit_button {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 900;
+  color: white;
+  font-size: 14px;
+  width: 150px;
+  padding: 10px;
+  border-radius: 30px;
+  cursor: pointer;
+  background-color: #056af9;
+  outline: none;
+  border: none;
+}
+
+.twitter-image-icon{
+  margin-right: 10px;
+}
+
+.error-message {
+  color: white;
+  border: 1px solid red;
+  background: #ee5757;
+  padding: 5px;
+  font-weight: bold;
+}
+
+@media (max-width:1000px) {
+  .get-started-wrapper {
+ height: 100vh;
+ display: flex;
+ justify-content: space-between;
+ flex-direction: column;
+  background-color: #202020 !important;
+}
+}
+
+@media (max-width: 600px) {
+.get-started{
+  background-image: none;
+}
+
+  .get-started-on-click-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 0px;
+  }
+
+  .get-started-on-click-text {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .get-started-on-click-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 20px;
+    background: #d7ff3a;
+    border: 1px solid #bcbcbc;
+    border-radius: 10px;
+    margin: 40px 0;
+    width: 80%;
+  }
+
+  .get-started-on-click-box-text {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    color: #202020;
+    text-align: center;
+  }
+
+  .form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+  }
+
+  #user_twitter_id {
+    height: 50px;
+    margin: 10px auto;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    padding: 10px;
+  }
+
+  .error-message {
+    background-color: rgb(228, 127, 127);
+    color: white;
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .submit_button {
+    background: #056af9;
+    border-radius: 48px;
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    color: #ffffff;
+    padding: 10px 40px;
+    border: none;
+    outline: none;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .twitter-image-icon{
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 350px) {
+.get-started-on-click-box {
+    padding: 10px 20px;}
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1000px;
+  }
+}

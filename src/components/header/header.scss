@@ -1,0 +1,58 @@
+.header {
+  background: #202020;
+  border-bottom: 1px solid #3A3A3A;
+}
+
+.logo {
+  vertical-align: middle;
+}
+
+.BuiltWithRevise {
+  display: inline-block;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  color: #ededed;
+  padding: 5px 10px;
+  border: 1px solid #d7ff3a;
+  vertical-align: middle;
+  border-radius: 70px;
+  margin: 0;
+}
+
+#logout{
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  color: #ededed;
+  padding: 5px 10px;
+  border: 1px solid #d7ff3a;
+  border-radius: 70px;
+  vertical-align: middle;
+  cursor: pointer;
+  margin: 0;
+}
+
+.hide{
+  display: none;
+}
+.show{
+  display: block;
+}
+
+@media (max-width:600px) {
+  .navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .BuiltWithRevise{
+    display: none;
+  }
+}

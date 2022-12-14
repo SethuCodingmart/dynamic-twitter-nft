@@ -1,0 +1,40 @@
+.revisions-wrapper{
+     border-bottom: 1px solid black;
+  border-spacing: 10px;
+}
+
+
+.revisions-point {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.increase-one-point {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  color: #000000;
+}
+
+.arrowIncrease {
+  border: 1px solid black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+}
+
+.revision-time{
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+letter-spacing: 0.2px;
+color: #7A8F25;
+line-height: 1;
+}
