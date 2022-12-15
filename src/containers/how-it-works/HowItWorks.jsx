@@ -62,7 +62,7 @@ const HowItWorks = () => {
             <div className="col how-it-works-text-box">
               <div className="p-3 how-it-works-text">
                 More than
-                <span className="highlight-tweet-number">10 tweets</span> on
+                <span className="highlight-tweet-number">51 tweets</span> on
                 #BuildWithRevise
               </div>
               <div className="nft-rank-details">GOLD NFT</div>
