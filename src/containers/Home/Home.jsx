@@ -6,18 +6,21 @@ import FAQ from "../faq/FAQ";
 import Footer from "../../components/footer/Footer";
 import BuiltFromTheBottom from "../built-from-the-bottom/BuiltFromTheBottom";
 import "./home.scss";
+import { useEffect, useState } from "react";
 
 const Home = () => {
   return (
-    <div className="home-wrapper">
-      <Header />
-      <Banner />
-      <Specs />
-      <HowItWorks />
-      <BuiltFromTheBottom />
-      <FAQ />
-      <Footer />
-    </div>
+    <>
+      <div className="home-wrapper">
+        <Header />
+        <Banner />
+        <Specs />
+        <HowItWorks />
+        <BuiltFromTheBottom />
+        <FAQ />
+        <Footer />
+      </div>
+    </>
   );
 };
 

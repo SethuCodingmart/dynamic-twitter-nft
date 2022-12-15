@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Logo from "../../assets/images/LogoSVG.svg";
 import "./header.scss";
 
@@ -13,9 +14,9 @@ const Header = () => {
     <header className="header">
       <div className="container">
         <nav className="navbar d-flex justify-content-around align-items-center">
-          <a className="navbar-brand" href="/">
+          <Link className="navbar-brand" to="/">
             <img src={Logo} alt="revise" className="logo" />
-          </a>
+          </Link>
           {twitterId === null ? (
             <p className="BuiltWithRevise">#BuiltWithRevise</p>
           ) : (

@@ -13,9 +13,12 @@ const GetStarted = () => {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (localStorage.getItem("twitterId") !== null) {
+      setIsLoading(true);
+
       navigate("/my-nft");
     }
   }, [localStorage.getItem("twitterId")]);
@@ -26,7 +29,6 @@ const GetStarted = () => {
     setError(false);
     setTwitterId(event.target.value);
   };
-
 
   //fetching API
   const tweetDetailsFunction = async (twitterId) => {

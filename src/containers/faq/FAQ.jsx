@@ -39,7 +39,7 @@ const FAQ = () => {
                 </p>
                 <div className="more-faq-connect">
                   <img src={line} alt="revise" className="more-faq-icons" />
-                  <a href="https://twitter.com/ReviseNFT">
+                  <a href="https://twitter.com/ReviseNFT" target="_blank">
                     <img
                       src={twitterIcon}
                       alt="revise"
@@ -51,7 +51,10 @@ const FAQ = () => {
                     alt="revise"
                     className="more-faq-icons"
                   />
-                  <a href="https://discord.com/invite/aMRnzBR5Pj">
+                  <a
+                    href="https://discord.com/invite/aMRnzBR5Pj"
+                    target="_blank"
+                  >
                     <img
                       src={discordIcon}
                       alt="revise"

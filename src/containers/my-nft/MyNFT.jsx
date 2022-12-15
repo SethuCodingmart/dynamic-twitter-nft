@@ -13,6 +13,7 @@ import share from "../../assets/images/share-image.svg";
 import Footer from "../../components/footer/Footer";
 import { useNavigate } from "react-router-dom";
 import "./myNFT.scss";
+import MyNFTLoader from "./MyNFTLoader";
 
 const MyNFT = () => {
   const [userProfileImage, setUserProfileImage] = useState("");
@@ -24,6 +25,7 @@ const MyNFT = () => {
   const [rankImage, setRankImage] = useState();
   const [timeArray, setTimeArray] = useState([]);
   const [nftId, setNFTId] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
   const url = `https://app.revise.network/revisions/${nftId}`;
 
   //getting twitter id from the user
@@ -87,129 +89,139 @@ const MyNFT = () => {
 
     //getting the nft id
     setNFTId(tweetDetails.nftId);
+    setIsLoading(false);
   };
   return (
     <>
-      <div className="my-nft-wrapper">
-        <Header />
-        <div className="my-nft-display">
-          <div className="my-nft-container container">
-            <div className="user-details">
-              <div className="userProfile">
-                <img src={userProfileImage} alt="revise" />
+      {!isLoading ? (
+        <div className="my-nft-wrapper">
+          <Header />
+          <div className="my-nft-display">
+            <div className="my-nft-container container">
+              <div className="user-details">
+                <div className="userProfile">
+                  <img src={userProfileImage} alt="revise" />
+                </div>
+                <div className="userDetail">
+                  <p className="userName">{userName}</p>
+                  <p className="userId">{`@` + twitterId}</p>
+                </div>
               </div>
-              <div className="userDetail">
-                <p className="userName">{userName}</p>
-                <p className="userId">{`@` + twitterId}</p>
-              </div>
-            </div>
-            <div className="hashtag-tweets">
-              <p className="hashtag">TWEETS MADE WITH #BuiltWithRevise</p>
-              <div className="stats">
-                <p className="number-stats">{totalTweets}</p>
-                <div className="percentage-stats">
-                  <div className="arrowUP">
-                    <img src={arrowPercentage} alt="revise" />
+              <div className="hashtag-tweets">
+                <p className="hashtag">TWEETS MADE WITH #BuiltWithRevise</p>
+                <div className="stats">
+                  <p className="number-stats">{totalTweets}</p>
+                  <div className="percentage-stats">
+                    <div className="arrowUP">
+                      <img src={arrowPercentage} alt="revise" />
+                    </div>
+                    <div>
+                      <p className="percentage">{percentage + "%"}</p>
+                      <p className="timeline"> since last week</p>
+                    </div>
                   </div>
+                </div>
+                <div className="rank-medal">
+                  <p className="showRank">rank</p>
+                  <p className="showMedal">{rank}</p>
+                </div>
+              </div>
+              <div className="more-tweets">
+                <div className="to-reach-next-level">
+                  <p className="required-tweets">{nextLevel}</p>
+                  <a
+                    href="https://twitter.com/intent/tweet?button_hashtag=BuiltWithRevise&ref_src=twsrc%5Etfw"
+                    className="twitter-hashtag-button tweet-now-button"
+                    data-text="I have created my Dynamic NFT using Revise"
+                    data-show-count="false"
+                  >
+                    Tweet #BuiltWithRevise
+                  </a>
+                </div>
+                <p className="static-text">
+                  More Tweets needed to reach next level
+                </p>
+              </div>
+              <div className="rank">
+                <img
+                  loading="lazy"
+                  src={rankImage}
+                  alt="revise"
+                  className="rank-image img-fluid"
+                />
+                <div className="minting-nft-off-chain">
+                  <p className="mint-on-polygon">
+                    <img
+                      src={polygon}
+                      alt="polygon"
+                      style={{ marginRight: "5px" }}
+                    />{" "}
+                    Mint on Polygon
+                  </p>
+                  <p className="mint-on-ethereum">
+                    <img
+                      src={ethereum}
+                      alt="ethereum"
+                      style={{ marginRight: "5px" }}
+                    />
+                    Mint on Ethereum
+                  </p>
+                </div>
+              </div>
+              <div className="revisions">
+                <div className="revisions-header">
+                  <p className="revisions-title">revisions</p>
+                  <a
+                    href={url}
+                    className="revisions-button-link"
+                    target="_blank"
+                  >
+                    <p className="revisions-button">see all</p>
+                  </a>
+                </div>
+                {timeArray ? (
+                  timeArray
+                    .slice(0, 4)
+                    .map((time) => <Revisions time={time} key={time} />)
+                ) : (
                   <div>
-                    <p className="percentage">{percentage + "%"}</p>
-                    <p className="timeline"> since last week</p>
+                    <p className="empty_tweet_details">Your tweet revisions</p>
+                    <p className="empty_tweet_details">will appear here</p>
                   </div>
+                )}
+              </div>
+              <div className="learn-more">
+                <div className="learnMoreImage">
+                  <img src={learnMore} alt="revise" />
                 </div>
-              </div>
-              <div className="rank-medal">
-                <p className="showRank">rank</p>
-                <p className="showMedal">{rank}</p>
-              </div>
-            </div>
-            <div className="more-tweets">
-              <div className="to-reach-next-level">
-                <p className="required-tweets">{nextLevel}</p>
-                <a
-                  href="https://twitter.com/intent/tweet?button_hashtag=BuiltWithRevise&ref_src=twsrc%5Etfw"
-                  className="twitter-hashtag-button tweet-now-button"
-                  data-text="I have created my Dynamic NFT using Revise"
-                  data-show-count="false"
-                >
-                  Tweet #BuiltWithRevise
-                </a>
-              </div>
-              <p className="static-text">
-                More Tweets needed to reach next level
-              </p>
-            </div>
-            <div className="rank">
-              <img
-                src={rankImage}
-                alt="revise"
-                className="rank-image img-fluid"
-              />
-              <div className="minting-nft-off-chain">
-                <p className="mint-on-polygon">
-                  <img
-                    src={polygon}
-                    alt="polygon"
-                    style={{ marginRight: "5px" }}
-                  />{" "}
-                  Mint on Polygon
-                </p>
-                <p className="mint-on-ethereum">
-                  <img
-                    src={ethereum}
-                    alt="ethereum"
-                    style={{ marginRight: "5px" }}
-                  />
-                  Mint on Ethereum
-                </p>
-              </div>
-            </div>
-            <div className="revisions">
-              <div className="revisions-header">
-                <p className="revisions-title">revisions</p>
-                <a href={url} className="revisions-button-link" target="_blank">
-                  <p className="revisions-button">see all</p>
-                </a>
-              </div>
-              {timeArray ? (
-                timeArray
-                  .slice(0, 4)
-                  .map((time) => <Revisions time={time} key={time} />)
-              ) : (
                 <div>
-                  <p className="empty_tweet_details">Your tweet revisions</p>
-                  <p className="empty_tweet_details">will appear here</p>
-                </div>
-              )}
-            </div>
-            <div className="learn-more">
-              <div className="learnMoreImage">
-                <img src={learnMore} alt="revise" />
-              </div>
-              <div>
-                <p className="learnMore-text">
-                  These NFT’s has been made dynamic using the Revise Library
-                </p>
+                  <p className="learnMore-text">
+                    These NFT’s has been made dynamic using the Revise Library
+                  </p>
 
-                <a href="https://docs.revise.network/api-docs/">
-                  <p className="learnMore-button">learn more</p>
-                </a>
+                  <a href="https://docs.revise.network/api-docs/">
+                    <p className="learnMore-button">learn more</p>
+                  </a>
+                </div>
               </div>
-            </div>
-            <div className="share">
-              <div className="shareImage">
-                <img src={share} alt="revise" />
-              </div>
-              <div>
-                <p className="shareText">
-                  Share your new NFT with your friends and family
-                </p>
-                <p className="shareButton">share on twitter</p>
+              <div className="share">
+                <div className="shareImage">
+                  <img src={share} alt="revise" />
+                </div>
+                <div>
+                  <p className="shareText">
+                    Share your new NFT with your friends and family
+                  </p>
+                  <p className="shareButton">share on twitter</p>
+                </div>
               </div>
             </div>
           </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
+      ) : (
+        <MyNFTLoader />
+      )}
     </>
   );
 };

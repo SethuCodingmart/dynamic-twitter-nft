@@ -1,3 +1,8 @@
+.m{
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
 .banner-get-started-heading {
   padding-top: 50px;
   font-family: "Manrope";
@@ -83,6 +88,7 @@
     font-size: 14px;
     color: #000000;
     cursor: pointer;
+   
 
     &::before {
       content: "";
