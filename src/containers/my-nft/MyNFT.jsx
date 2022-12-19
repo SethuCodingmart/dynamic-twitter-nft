@@ -28,6 +28,7 @@ const MyNFT = () => {
   const [nftId, setNFTId] = useState("");
   const url = `https://app.revise.network/revisions/${nftId}`;
   const [account, setAccount] = useState(null);
+  const [loader, setLoader] = useState(false);
 
   //getting twitter id from the user
   let twitterId = localStorage.getItem("twitterId");
@@ -43,6 +44,7 @@ const MyNFT = () => {
 
   //getting the tweet details
   const tweetDetails = async (twitterId) => {
+    setLoader(true);
     const tweetDetails = await fetchTweetDetails(twitterId);
     console.log(tweetDetails);
     //get the details
@@ -94,11 +96,13 @@ const MyNFT = () => {
     let account = await checkWalletConnected();
     console.log({ account });
     setAccount(account);
+    setLoader(false);
   };
   return (
     <>
       <div className="my-nft-wrapper">
         <Header />
+        {loader && <div class="loading"></div>}
         <div className="my-nft-display">
           <div className="my-nft-container container">
             <div className="user-details">
@@ -154,12 +158,19 @@ const MyNFT = () => {
               <div className="minting-nft-off-chain">
                 <p
                   className="mint-on-polygon"
-                  onClick={() => {
+                  onClick={async () => {
                     if (account === null) {
+                      setLoader(true);
                       connectWallet();
+                      setLoader(false);
                     } else {
                       //Mint Function
-                      mintNFT(`https://revise.link/${nftId}`);
+                      setLoader(true);
+                      await mintNFT(
+                        `https://revise.link/${nftId}`,
+                        userName.trim()
+                      );
+                      setLoader(false);
                     }
                   }}
                 >

@@ -1,8 +1,8 @@
 const Twitter = require("../utils/Twitter.json");
 const ethers = require("ethers");
-const CONTRACT_ADDRESS = "0xC81892F0581841fB16C9e088614395098a052494";
+const CONTRACT_ADDRESS = "0xCfC79d01f8e9f52c261603608a450e58B0D38e1b";
 
-const mintNFT = async (url) => {
+const mintNFT = async (url, userName) => {
   try {
     console.log({ url });
     const { ethereum } = window;
@@ -15,7 +15,7 @@ const mintNFT = async (url) => {
         signer
       );
       console.log("Going to pop wallet now to pay gas...");
-      let tx = await contract.register(url);
+      let tx = await contract.register(url, userName);
       const receipt = await tx.wait();
       console.log(receipt);
       if (receipt.status === 1) {
