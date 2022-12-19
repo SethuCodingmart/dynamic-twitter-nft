@@ -1,0 +1,77 @@
+.built-from-the-bottom-wrapper{
+margin: 100px 0px;
+}
+
+.built-from-the-bottom-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1.5px solid #ffffff;
+  margin-bottom: 50px;
+  align-items: flex-end;
+}
+
+.built-from-the-bottom-title {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.built-with-revise-special {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.built-with-revise-special-text {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.built-with-revise-special-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+.built-from-the-bottom-wrapper{
+padding: 0 20px;
+}
+
+
+  .built-from-the-bottom-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1.5px solid #ffffff;
+    margin-bottom: 30px;
+  }
+
+  .built-from-the-bottom-title  {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    color: #ffffff;
+  }
+
+  .stars {
+    width: 100%;
+    text-align: end;
+  }
+
+
+  .built-with-revise-special-text {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    color: #ffffff;
+  }
+}

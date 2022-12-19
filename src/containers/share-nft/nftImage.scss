@@ -1,0 +1,378 @@
+@media print{
+    .my-nft-wrapper {
+  background-color: #202020;
+}
+}
+
+.my-nft-wrapper {
+  background-color: #202020;
+}
+.user-details {
+  grid-area: userDetails;
+  background: #d7ff3a;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.user-detail{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.userProfile {
+  margin-right: 20px;
+  width: 59px;
+  height: 59px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.userName {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.connected-with-twitter {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  color: #000000;
+  background: #d7ff3a;
+  padding:0 10px;
+  border-radius: 30px;border: 1px solid #000000;
+
+  &::before{
+    content: '';
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #40E150;
+    display: inline-block;
+    margin-right: 10px;
+  }
+}
+
+.hashtag-tweets {
+  grid-area: hashtagTweets;
+  background: #d7ff3a;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.hashtag {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  color: #000000;
+  display: flex;
+  justify-content: start;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #000;
+  border-spacing: 5px;
+  margin-bottom: 10px;
+}
+
+.number-stats {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  color: #000000;
+}
+
+.percentage-stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.arrowUP {
+  width: 28px;
+  height: 28px;
+  margin-right: 10px;
+  border-radius: 50%;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.percentage {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  color: #000000;
+  
+}
+
+.timeline {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #000000;
+}
+
+.rank-medal {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #000;
+  border-spacing: 10px;
+}
+
+.showRank {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.showMedal {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+
+  &::before {
+    margin-right: 10px;
+    content: "";
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-color: #d9d9d9;
+    border-radius: 50%;
+  }
+}
+
+.more-tweets {
+  grid-area: moreTweets;
+  background: #d7ff3a;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.to-reach-next-level {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.required-tweets {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  color: #000000;
+}
+
+.tweet-now-button {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.2px;
+  color: #f3f2f2;
+  background-color: #056af9;
+  border-radius: 10px;
+  padding: 1px 5px;
+  text-decoration: none;
+  &:visited{
+    text-decoration: none;
+    color: #f3f2f2;
+  }
+}
+
+.static-text {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  color: #000000;
+  display: flex;
+  justify-content: start;
+}
+
+.rank {
+  grid-area: rank;
+  background-color: #121212;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.revisions {
+  grid-area: revisions;
+  background: #d7ff3a;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.revisions-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+  border-spacing: 10px;
+  text-transform: uppercase;
+}
+
+.revisions-title {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  color: #000000;
+}
+
+.revisions-button {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.2px;
+  color: #f3f2f2;
+  background-color: #056af9;
+  border-radius: 10px;
+  padding: 1px 5px;
+}
+
+.revisions-button {
+  color: #f3f2f2;
+  background-color: #056af9;
+  text-decoration: none;
+  &:visited{
+    text-decoration: none;
+    color: #f3f2f2;
+  background-color: #056af9;
+  }
+}
+
+.learn-more {
+  grid-area: learnMore;
+  background: #121212;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.learnMore-text {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  color: #ededed;
+}
+
+.learnMore-button {
+  background: #056af9;
+  border-radius: 40px;
+  padding: 8px 14px;
+  cursor: pointer;
+  color: #f3f2f2;
+  text-decoration: none;
+}
+
+.share {
+  grid-area: share;
+  background: #121212;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #f3f2f2;
+}
+
+.shareText {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  color: #ededed;
+}
+
+.shareButton {
+  background: #056af9;
+  border-radius: 40px;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+.nft-wrapper {
+  display: grid;
+  grid-template-areas:
+    "userDetails userDetails rank rank revisions revisions"
+    "hashtagTweets hashtagTweets rank rank revisions revisions"
+    "hashtagTweets hashtagTweets rank rank revisions revisions"
+    "moreTweets moreTweets rank rank revisions revisions"
+    "learnMore learnMore learnMore share share share"
+    "learnMore learnMore learnMore share share share";
+  gap: 10px;
+  margin: 20px auto;
+}
+
+.nft-display {
+  object-fit: cover;
+  background-image: url("../../assets/images/bgImage.png");
+  background-repeat: no-repeat;
+  object-fit: cover;
+}
+
+.empty_tweet_details {
+  display: flex;justify-content: center;align-items: center;
+  font-family: "Manrope";
+  font-style: bold;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  .nft-wrapper {
+    display: grid;
+    grid-template-areas:
+      "userDetails"
+      "rank"
+      "hashtagTweets"
+      "moreTweets"
+      "revisions"
+      "learnMore"
+      "share";
+
+    text-align: center;
+    gap: 10px;
+  }
+
+  // .nft-display{
+  //   margin:10px;
+  // }
+}

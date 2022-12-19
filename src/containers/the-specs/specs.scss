@@ -1,0 +1,81 @@
+.specs-wrapper {
+  margin: 50px 0px;
+}
+
+.specs-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1.5px solid #ffffff;
+  margin-bottom: 30px;
+  align-items: flex-end;
+}
+
+.specs-title {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.specs-paras {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  color: #f3f2f2;
+  border-bottom: 1.5px solid #ffffff;
+}
+
+.specs-para-one {
+  margin-bottom: 50px;
+}
+.specs-para-two {
+  margin-bottom: 50px;
+}
+.specs-para-three {
+  // margin-bottom: 50px;
+}
+
+@media (max-width: 600px) {
+.specs-wrapper {
+  margin: 50px 0px;
+  padding: 0 20px;
+}
+
+  .specs-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1.5px solid #ffffff;
+    margin-bottom: 20px;
+  }
+
+  .specs-title {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: left;
+  }
+
+  .specs-stars {
+    text-align: end;
+  }
+
+  .specs-paras {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    color: #f3f2f2;
+  }
+
+  .specs-para-one {
+    margin-bottom: 30px;
+  }
+
+  .specs-para-two {
+    margin-bottom: 30px;
+  }
+}

@@ -1,0 +1,215 @@
+.how-it-works-wrapper {
+  background-image: url("../../assets/images/how-it-works-background-image.svg");
+  background-size: cover;
+}
+
+.one-click-nft {
+  display: flex;
+  justify-content: space-around;
+  background: #d7ff3a;
+  align-items: center;
+  border-radius: 80px;
+  padding: 30px;
+  margin-bottom: 100px;
+}
+
+.one-click-nft-gift-box {
+  border-radius: 50%;
+  border: 1px solid;
+  background: #a2c810;
+  width: 100px;
+  height: 100px;
+}
+
+.one-click-nft-text {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  color: #202020;
+}
+
+.one-click-nft-button {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  color: #f3f2f2;
+  background-color: #056af9;
+  border-radius: 30px;
+  padding: 5px 10px;
+  width: 200px;
+  text-align: center;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: white;
+    margin-right: 10px;
+  }
+}
+
+.how-it-works-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1.5px solid #ffffff;
+  margin-bottom: 30px;
+  align-items: flex-end;
+}
+
+.how-it-works-title {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.how-it-works-text {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  color: #ededed;
+  margin: 10px;
+}
+
+.how-it-works-text-box {
+  background: #000000;
+  border-radius: 15px;
+  height: 350px;
+  margin-right: 30px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.nft-rank-details {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  color: #ecc793;
+}
+
+.highlight-tweet-number {
+  background-color: #ecc793;
+  padding: 5px;
+  color: black;
+}
+
+.linkButton {
+  color: #f3f2f2;
+  text-decoration: none;
+  &:visited {
+    text-decoration: none;
+    color: #f3f2f2;
+  }
+}
+
+@media (max-width: 600px) {
+.how-it-works-wrapper {
+  background-image: none;
+  padding: 0 20px;
+}
+
+
+    .one-click-nft {
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+   .one-click-nft-text {
+    font-size: 20px;
+    margin: 20px 0;
+  }
+
+  .one-click-nft-button {
+    font-size: 16px;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background-color: white;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+  }
+
+
+  .how-it-works-box {
+    display: block;
+  }
+
+  .how-it-works-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1.5px solid #ffffff;
+    margin-bottom: 20px;
+  }
+
+  .how-it-works-title {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    color: #ffffff;
+  }
+
+  .stars {
+    width: 100%;
+    text-align: end;
+  }
+
+  .how-it-works-text-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: #000000;
+    border-radius: 14px;
+    margin: 10px 0px;
+    padding: 15px;
+    height: 350px;position: relative;
+  }
+
+  .how-it-works-text {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    color: #ededed;
+  }
+
+  .nft-rank-details {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+  }
+
+  .highlight-tweet-number {
+    background: #ecc793;
+
+  }
+}
+
+@media (max-width: 300px) {
+  .how-it-works-text-box {
+    padding: 30px;
+  }
+
+  .how-it-works-text {
+    font-size: 1em;
+  }
+
+}
