@@ -204,6 +204,10 @@
     text-decoration: none;
     color: #f3f2f2;
   }
+                                                                &:hover {
+                                                                  text-decoration: none;
+                                                                  color: #f3f2f2;
+                                                                }
 }
 
 .static-text {
@@ -344,6 +348,7 @@ margin-bottom: 20px;
   cursor: pointer;
   color: #f3f2f2;
   text-decoration: none;
+  text-align: center;
 }
 
 .share {
@@ -355,6 +360,15 @@ margin-bottom: 20px;
   justify-content: space-between;
   align-items: center;
   color: #f3f2f2;
+&:visited {
+    text-decoration: none;
+    color: #f3f2f2;
+  }
+
+  &:hover {
+    text-decoration: none;
+    color: #f3f2f2;
+  }
 }
 
 .shareImage {
@@ -373,8 +387,20 @@ margin-bottom: 20px;
 .shareButton {
   background: #056af9;
   border-radius: 40px;
-  padding: 8px 14px;
+      color: #f3f2f2;
+        padding: 8px 14px;
   cursor: pointer;
+  text-align: center;
+  
+    &:visited {
+      text-decoration: none;
+      color: #f3f2f2;
+    }
+  
+    &:hover {
+      text-decoration: none;
+      color: #f3f2f2;
+    }
 }
 
 .empty_tweet_details {

@@ -46,13 +46,7 @@ const FAQ = () => {
                       className="more-faq-icons"
                     />
                   </a>
-                  <a href="#" target="_blank">
-                    <img
-                      src={telegramIcon}
-                      alt="revise"
-                      className="more-faq-icons"
-                    />
-                  </a>
+
                   <a
                     href="https://discord.com/invite/aMRnzBR5Pj"
                     target="_blank"

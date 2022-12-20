@@ -30,6 +30,8 @@ const MyNFT = () => {
   const [nftId, setNFTId] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [account, setAccount] = useState(null);
+  const [currentAccount, setCurrentAccount] = useState(null);
+  const [mintingNFT, setMintingNFT] = useState(null);
   const [loader, setLoader] = useState(false);
   const [errorMessage, setErrorMassage] = useState("");
   const REVISE = process.env.REACT_APP_REVISE_APP_NETWORK;
@@ -98,8 +100,19 @@ const MyNFT = () => {
     setIsLoading(false);
 
     let account = await checkWalletConnected();
+    let currentAccount = await connectWallet();
+    let mintingNFT = await mintNFT();
     setAccount(account);
+    setCurrentAccount(currentAccount);
+    setMintingNFT(mintingNFT);
+    console.log(account);
+    console.log(currentAccount);
+    console.log(mintingNFT);
     setLoader(false);
+
+    // if (account === null) {
+    //   setErrorMassage("Make sure you have MetaMask!");
+    // }
   };
   return (
     <>
@@ -141,10 +154,9 @@ const MyNFT = () => {
                 <div className="to-reach-next-level">
                   <p className="required-tweets">{nextLevel}</p>
                   <a
-                    href="https://twitter.com/intent/tweet?button_hashtag=BuiltWithRevise&ref_src=twsrc%5Etfw"
-                    className="twitter-hashtag-button tweet-now-button"
-                    data-text="I have created my Dynamic NFT using Revise"
-                    data-show-count="false"
+                    href="https://twitter.com/intent/tweet?text=Say%20something...%20%23revise%20%23BuiltWithRevise%20"
+                    target="_blank"
+                    className="tweet-now-button"
                   >
                     Tweet #BuiltWithRevise
                   </a>
@@ -229,7 +241,10 @@ const MyNFT = () => {
                     These NFT’s has been made dynamic using the Revise Library
                   </p>
 
-                  <a href="https://docs.revise.network/api-docs/">
+                  <a
+                    href="https://docs.revise.network/api-docs/"
+                    target="_blank"
+                  >
                     <p className="learnMore-button">learn more</p>
                   </a>
                 </div>
@@ -242,7 +257,12 @@ const MyNFT = () => {
                   <p className="shareText">
                     Share your new NFT with your friends and family
                   </p>
-                  <p className="shareButton">share on twitter</p>
+                  <a
+                    href="https://twitter.com/intent/tweet?text=Say%20something...%20%23revise%20%23BuiltWithRevise%20"
+                    target="_blank"
+                  >
+                    <p className="shareButton">share on twitter</p>
+                  </a>
                 </div>
               </div>
             </div>
