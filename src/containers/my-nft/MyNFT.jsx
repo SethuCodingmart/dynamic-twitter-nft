@@ -29,10 +29,11 @@ const MyNFT = () => {
   const [timeArray, setTimeArray] = useState([]);
   const [nftId, setNFTId] = useState("");
   const [isLoading, setIsLoading] = useState(true);
-  const url = `https://app.revise.network/revisions/${nftId}`;
   const [account, setAccount] = useState(null);
   const [loader, setLoader] = useState(false);
-
+  const [errorMessage, setErrorMassage] = useState("");
+  const REVISE = process.env.REACT_APP_REVISE_APP_NETWORK;
+  const seeAllRevisions = `${REVISE}/revisions/${nftId}`;
   //getting twitter id from the user
   let twitterId = localStorage.getItem("twitterId");
   const navigate = useNavigate();
@@ -49,7 +50,7 @@ const MyNFT = () => {
   const tweetDetails = async (twitterId) => {
     setLoader(true);
     const tweetDetails = await fetchTweetDetails(twitterId);
-    
+
     //get the details
 
     //get user profile image
@@ -63,8 +64,7 @@ const MyNFT = () => {
     } else {
       setTotalTweets(tweetDetails.count["#BuiltWithRevise"]);
     }
-    console.log(tweetDetails.count["#BuiltWithRevise"]);
-    console.log(totalTweets);
+
     //get percentage difference
     setPercentage(tweetDetails.rankStat.percentage);
 
@@ -98,7 +98,6 @@ const MyNFT = () => {
     setIsLoading(false);
 
     let account = await checkWalletConnected();
-    console.log({ account });
     setAccount(account);
     setLoader(false);
   };
@@ -107,7 +106,7 @@ const MyNFT = () => {
       {!isLoading ? (
         <div className="my-nft-wrapper">
           <Header />
-          {loader && <div class="loading"></div>}
+          {loader && <div className="loading"></div>}
           <div className="my-nft-display">
             <div className="my-nft-container container">
               <div className="user-details">
@@ -197,11 +196,16 @@ const MyNFT = () => {
                 </p> */}
                 </div>
                 <p>{account || ""}</p>
+                <p>{errorMessage}</p>
               </div>
               <div className="revisions">
                 <div className="revisions-header">
                   <p className="revisions-title">revisions</p>
-                  <a href={url} className="revisions-button-link" target="_blank">
+                  <a
+                    href={seeAllRevisions}
+                    className="revisions-button-link"
+                    target="_blank"
+                  >
                     <p className="revisions-button">see all</p>
                   </a>
                 </div>
@@ -244,7 +248,10 @@ const MyNFT = () => {
             </div>
           </div>
           <Footer />
-        </div>) : (<MyNFTLoader />)}
+        </div>
+      ) : (
+        <MyNFTLoader />
+      )}
     </>
   );
 };

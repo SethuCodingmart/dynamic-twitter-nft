@@ -32,11 +32,10 @@ const GetStarted = () => {
   const tweetDetailsFunction = async (twitterId) => {
     try {
       const tweetDetails = await fetchTweetDetails(twitterId);
-      console.log(tweetDetails);
       setLoading(false);
       setError(false);
-
       setErrorMessage("");
+      
       //Set TwitterId in Local Storage after Success
       localStorage.setItem("twitterId", twitterId);
       navigate("/my-nft");

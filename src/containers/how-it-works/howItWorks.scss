@@ -81,10 +81,9 @@
 .how-it-works-text-box {
   background: #000000;
   border-radius: 15px;
-  height: 350px;
   margin-right: 30px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-direction: column;
   margin-bottom: 20px;
 }
@@ -145,11 +144,6 @@
     }
   }
 
-
-  .how-it-works-box {
-    display: block;
-  }
-
   .how-it-works-header {
     display: flex;
     justify-content: space-between;
@@ -173,13 +167,13 @@
   .how-it-works-text-box {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: space-around;
+      // align-items: flex-start;
     background: #000000;
     border-radius: 14px;
     margin: 10px 0px;
     padding: 15px;
-    height: 350px;position: relative;
+    align-items: center;
   }
 
   .how-it-works-text {
