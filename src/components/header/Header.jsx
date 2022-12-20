@@ -1,12 +1,14 @@
 import Logo from "../../assets/images/LogoSVG.svg";
 import "./header.scss";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
   const twitterId = localStorage.getItem("twitterId");
 
   const handleClickLogout = () => {
     localStorage.removeItem("twitterId");
-    window.location.reload(false);
+    navigate("/mint-nft");
   };
 
   return (

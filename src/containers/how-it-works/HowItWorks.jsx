@@ -45,7 +45,7 @@ const HowItWorks = () => {
               <div className="p-3 how-it-works-text">
                 Less than
                 <span className="highlight-tweet-number">10 tweets</span> on
-                #BuildWithRevise
+                #BuiltWithRevise
               </div>
               <div className="nft-rank-details">BRONZE NFT</div>
             </div>
@@ -55,15 +55,15 @@ const HowItWorks = () => {
                 <span className="highlight-tweet-number">11 tweets</span> and
                 less than
                 <span className="highlight-tweet-number">51 tweets</span> on
-                #BuildWithRevise
+                #BuiltWithRevise
               </div>
               <div className="nft-rank-details">SILVER NFT</div>
             </div>
             <div className="col how-it-works-text-box">
               <div className="p-3 how-it-works-text">
                 More than
-                <span className="highlight-tweet-number">10 tweets</span> on
-                #BuildWithRevise
+                <span className="highlight-tweet-number">51 tweets</span> on
+                #BuiltWithRevise
               </div>
               <div className="nft-rank-details">GOLD NFT</div>
             </div>
