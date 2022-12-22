@@ -51,7 +51,7 @@ const MyNFT = () => {
       tweetDetails(twitterId);
       window.ethereum.on("accountsChanged", function (accounts) {
         if (accounts.length <= 0) {
-          navigate("/my-nft");
+          navigate("/mint-nft");
         }
       });
     }
