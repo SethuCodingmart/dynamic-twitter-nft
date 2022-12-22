@@ -335,6 +335,7 @@ margin-bottom: 20px;
 
 .learnMoreImage {
   margin-bottom: 20px;
+  margin-right: 20px;
 }
 
 .learnMore-text {
@@ -378,6 +379,7 @@ margin-bottom: 20px;
 
 .shareImage {
   margin-bottom: 20px;
+  margin-right: 20px;
 }
 
 .shareText {
@@ -463,11 +465,17 @@ margin-bottom: 20px;
   .learn-more {
     margin-bottom: 20px;
     flex-direction: column;
+  .learnMoreImage {
+      margin-right: 0;
+    }
   }
   .share {
     margin-bottom: 20px;
     flex-direction: column;
   }
+.shareImage {
+  margin-right: 0;
+}
 
   .my-nft-display {
     padding-top: 10px;
