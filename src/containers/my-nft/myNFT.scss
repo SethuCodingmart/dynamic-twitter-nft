@@ -34,10 +34,15 @@
 
 .userProfile {
   margin-right: 20px;
-  width: 59px;
-  height: 59px;
-  object-fit: cover;
+}
+
+
+.userProfileImage {
+    width: 59px;
+      height: 59px;
+    border: 1px solid #000;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .user-detail {
@@ -413,6 +418,13 @@ margin-bottom: 20px;
   font-size: 20px;
 }
 
+.wallet-address {
+  font-size: 14px;
+  color: white;
+  border-radius: 30px;
+  border: 1px solid #AFCF2E;
+  padding: 5px 10px;
+}
 @media (max-width: 768px) {
   .my-nft-container {
     display: grid;
@@ -465,6 +477,7 @@ margin-bottom: 20px;
 .minting-nft-off-chain{
   flex-direction: column;
 }
+
 }
 
 @media (max-width: 300px) {
@@ -500,4 +513,7 @@ margin-bottom: 20px;
   .share {
     padding: 5px;
   }
+.wallet-address {
+  font-size: 11px;
+}
 }

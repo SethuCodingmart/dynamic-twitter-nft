@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { fetchTweetDetails } from "../../services/api";
 import Header from "../../components/header/Header";
 import polygon from "../../assets/images/Polygon.svg";
-// import ethereum from "../../assets/images/Ethereum.svg";
 import arrowPercentage from "../../assets/images/arrow-percentage.svg";
 import masterRank from "../../assets/images/master-rank.svg";
 import silverRank from "../../assets/images/silver-rank.svg";
@@ -13,10 +12,12 @@ import share from "../../assets/images/share-image.svg";
 import metamask from "../../assets/images/metamask.svg";
 import Footer from "../../components/footer/Footer";
 import { useNavigate } from "react-router-dom";
-import { checkWalletConnected, connectWallet, mintNFT } from "../../mint/index";
 import MyNFTLoader from "./MyNFTLoader";
-
 import "./myNFT.scss";
+
+const Twitter = require("../../utils/Twitter.json");
+const ethers = require("ethers");
+const CONTRACT_ADDRESS = "0xCfC79d01f8e9f52c261603608a450e58B0D38e1b";
 
 const MyNFT = () => {
   const [userProfileImage, setUserProfileImage] = useState("");
@@ -30,23 +31,26 @@ const MyNFT = () => {
   const [nftId, setNFTId] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [account, setAccount] = useState(null);
-  const [currentAccount, setCurrentAccount] = useState(null);
-  const [mintingNFT, setMintingNFT] = useState(null);
   const [loader, setLoader] = useState(false);
-  const [errorMessage, setErrorMassage] = useState("");
+  const [error, setError] = useState(false);
+  const [wallet, setWallet] = useState(true);
+  const [accountErrorMessage, setAccountErrorMassage] = useState("");
+
   const REVISE = process.env.REACT_APP_REVISE_APP_NETWORK;
   const seeAllRevisions = `${REVISE}/revisions/${nftId}`;
+
   //getting twitter id from the user
   let twitterId = localStorage.getItem("twitterId");
   const navigate = useNavigate();
-  //calling fetchTweetDetails details and preventing un authorization
+
+  //calling fetchTweetDetails details and preventing un authorized entry
   useEffect(() => {
     if (twitterId === null || twitterId === "") {
       navigate("/mint-nft");
     } else {
       tweetDetails(twitterId);
     }
-  }, [twitterId]);
+  }, [twitterId, account]);
 
   //getting the tweet details
   const tweetDetails = async (twitterId) => {
@@ -54,7 +58,6 @@ const MyNFT = () => {
     const tweetDetails = await fetchTweetDetails(twitterId);
 
     //get the details
-
     //get user profile image
     setUserProfileImage(tweetDetails.user.profile_image_url);
     //get user name
@@ -77,7 +80,6 @@ const MyNFT = () => {
     setNextLevel(tweetDetails.forNextLevel);
 
     //setting up an image for rank
-    // console.log(totalTweets);
     if (
       tweetDetails.count["#BuiltWithRevise"] < 11 ||
       tweetDetails.count["#BuiltWithRevise"] === undefined
@@ -92,27 +94,153 @@ const MyNFT = () => {
       setRankImage(masterRank);
     }
 
-    //getting u the revisions
+    //getting you the revisions
     setTimeArray(tweetDetails.timestamps["#BuiltWithRevise"]);
 
     //getting the nft id
     setNFTId(tweetDetails.nftId);
     setIsLoading(false);
 
-    let account = await checkWalletConnected();
-    let currentAccount = await connectWallet();
-    let mintingNFT = await mintNFT();
-    setAccount(account);
-    setCurrentAccount(currentAccount);
-    setMintingNFT(mintingNFT);
-    console.log(account);
-    console.log(currentAccount);
-    console.log(mintingNFT);
-    setLoader(false);
+    let wallet = await checkWalletConnected();
+    setAccount(wallet);
+    console.log("wallet", account);
 
-    // if (account === null) {
-    //   setErrorMassage("Make sure you have MetaMask!");
-    // }
+    setLoader(false);
+  };
+
+  const mintNFT = async (url, userName) => {
+    try {
+      const { ethereum } = window;
+      if (ethereum) {
+        const provider = new ethers.providers.Web3Provider(ethereum);
+        const signer = provider.getSigner();
+        const contract = new ethers.Contract(
+          CONTRACT_ADDRESS,
+          Twitter.abi,
+          signer
+        );
+        setWallet(true);
+        setError(true);
+        setAccountErrorMassage("Going to pop wallet now to pay gas...");
+        let tx = await contract.register(url, userName);
+        const receipt = await tx.wait();
+
+        if (receipt.status === 1) {
+          setWallet(true);
+          setError(true);
+          setAccountErrorMassage(
+            "NFT minted! https://mumbai.polygonscan.com/tx/" + tx.hash
+          );
+        } else {
+          setWallet(true);
+          setError(true);
+          setAccountErrorMassage("Transaction failed! Please try again");
+        }
+      }
+    } catch (error) {
+      setWallet(true);
+      setError(true);
+      setAccountErrorMassage(error.error.data.message);
+      return error;
+    }
+  };
+
+  const connectWallet = async () => {
+    try {
+      const { ethereum } = window;
+      if (!ethereum) {
+        setAccount(null);
+        setError(true);
+        setWallet(false);
+        setAccountErrorMassage(
+          <a href="https://metamask.io/" target="_blank">
+            Get MetaMask - https://metamask.io/
+          </a>
+        );
+      } else {
+        // console.log("We have the ethereum object", ethereum);
+        setError(false);
+        setAccountErrorMassage("");
+      }
+
+      // Fancy method to request access to account.
+      const accounts = await ethereum.request({
+        method: "eth_requestAccounts",
+      });
+
+      // Boom! This should print out public address once we authorize Metamask.
+      // console.log("Connected", accounts[0]);
+      setAccount(accounts[0]);
+      setWallet(true);
+      setError(false);
+      setAccountErrorMassage("");
+      return accounts[0];
+    } catch (error) {
+      if (error.code === 4001) {
+        setError(true);
+        setAccountErrorMassage("you have denied to connect your wallet");
+        setAccount(null);
+        setWallet(false);
+      }
+      setAccount(null);
+      setWallet(false);
+
+      return null;
+    }
+  };
+
+  const checkWalletConnected = async () => {
+    const { ethereum } = window;
+    if (!ethereum) {
+      setAccount(null);
+      setWallet(false);
+      setError(true);
+      setAccountErrorMassage("Make sure you have MetaMask!");
+      return null;
+    } else {
+      // console.log("We have the ethereum object", ethereum);
+      setError(false);
+      setAccountErrorMassage("");
+    }
+
+    const accounts = await ethereum.request({ method: "eth_accounts" });
+    if (accounts.length > 0) {
+      // console.log("Found an authorized account:", account);
+      setAccount(accounts[0]);
+      setWallet(true);
+      setError(false);
+      setAccountErrorMassage("");
+      return accounts[0];
+    } else {
+      setAccount(null);
+      setWallet(false);
+      setError(false);
+      setAccountErrorMassage("");
+      return null;
+    }
+  };
+
+  const mintOnPolygon = async () => {
+    {
+      if (account === null || account === undefined) {
+        setLoader(true);
+        setWallet(false);
+        connectWallet();
+        setLoader(false);
+      } else {
+        //Mint Function
+        setLoader(true);
+        setWallet(true);
+        try {
+          await mintNFT(`https://revise.link/${nftId}`, userName.trim());
+        } catch (error) {
+          setAccountErrorMassage(
+            "you have disconnected your wallet, connect to your wallet again"
+          );
+        }
+        setLoader(false);
+      }
+    }
   };
   return (
     <>
@@ -124,7 +252,11 @@ const MyNFT = () => {
             <div className="my-nft-container container">
               <div className="user-details">
                 <div className="userProfile">
-                  <img src={userProfileImage} alt="revise" />
+                  <img
+                    src={userProfileImage}
+                    alt="revise"
+                    className="userProfileImage"
+                  />
                 </div>
                 <div className="userDetail">
                   <p className="userName">{userName}</p>
@@ -174,41 +306,32 @@ const MyNFT = () => {
                 <div className="minting-nft-off-chain">
                   <p
                     className="mint-on-polygon"
-                    onClick={async () => {
-                      if (account === null) {
-                        setLoader(true);
-                        connectWallet();
-                        setLoader(false);
-                      } else {
-                        //Mint Function
-                        setLoader(true);
-                        await mintNFT(
-                          `https://revise.link/${nftId}`,
-                          userName.trim()
-                        );
-                        setLoader(false);
-                      }
-                    }}
+                    onClick={() => mintOnPolygon()}
                   >
                     <img
-                      src={account === null ? metamask : polygon}
+                      src={
+                        account === null || account === undefined
+                          ? metamask
+                          : polygon
+                      }
                       alt="polygon"
                       style={{ margin: "5px", height: "20px" }}
                     />
-                    {account === null ? "Connect to Wallet" : "Mint on Polygon"}
+                    {account === null || account === undefined
+                      ? "Connect to Wallet"
+                      : "Mint on Polygon"}
                   </p>
-
-                  {/* <p className="mint-on-ethereum">
-                  <img
-                    src={ethereum}
-                    alt="ethereum"
-                    style={{ marginRight: "5px" }}
-                  />
-                  Mint on Ethereum
-                </p> */}
                 </div>
-                <p>{account || ""}</p>
-                <p>{errorMessage}</p>
+                {wallet ? (
+                  <p className="wallet-address">{account || ""}</p>
+                ) : (
+                  ""
+                )}
+                {error ? (
+                  <p className="error-message">{accountErrorMessage}</p>
+                ) : (
+                  ""
+                )}
               </div>
               <div className="revisions">
                 <div className="revisions-header">
@@ -257,10 +380,7 @@ const MyNFT = () => {
                   <p className="shareText">
                     Share your new NFT with your friends and family
                   </p>
-                  <a
-                    href="https://twitter.com/intent/tweet?text=Say%20something...%20%23revise%20%23BuiltWithRevise%20"
-                    target="_blank"
-                  >
+                  <a href="https://twitter.com/home?status=This%20photo%20is%20awesome!%20Check%20it%20out:%20pic.twitter.com/9Ee63f7aVp">
                     <p className="shareButton">share on twitter</p>
                   </a>
                 </div>
