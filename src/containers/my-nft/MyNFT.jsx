@@ -49,6 +49,11 @@ const MyNFT = () => {
       navigate("/mint-nft");
     } else {
       tweetDetails(twitterId);
+      window.ethereum.on("accountsChanged", function (accounts) {
+        if (accounts.length <= 0) {
+          window.location.reload();
+        }
+      });
     }
   }, [twitterId, account]);
 
