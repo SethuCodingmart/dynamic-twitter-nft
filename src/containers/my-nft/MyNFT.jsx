@@ -51,7 +51,7 @@ const MyNFT = () => {
       tweetDetails(twitterId);
       window.ethereum.on("accountsChanged", function (accounts) {
         if (accounts.length <= 0) {
-          window.location.reload();
+          navigate("/my-nft");
         }
       });
     }
@@ -108,7 +108,6 @@ const MyNFT = () => {
 
     let wallet = await checkWalletConnected();
     setAccount(wallet);
-    console.log("wallet", account);
 
     setLoader(false);
   };
