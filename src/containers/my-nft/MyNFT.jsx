@@ -52,6 +52,8 @@ const MyNFT = () => {
       window.ethereum.on("accountsChanged", function (accounts) {
         if (accounts.length <= 0) {
           navigate("/mint-nft");
+        } else {
+          navigate("/mint-nft");
         }
       });
     }
