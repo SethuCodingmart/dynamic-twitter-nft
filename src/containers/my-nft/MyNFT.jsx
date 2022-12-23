@@ -389,7 +389,7 @@ const MyNFT = () => {
                   <p className="shareText">
                     Share your new NFT with your friends and family
                   </p>
-                  <a href="https://twitter.com/home?status=This%20photo%20is%20awesome!%20Check%20it%20out:%20pic.twitter.com/9Ee63f7aVp">
+                  <a href="https://twitter.com/intent/tweet?text=Say%20something...%20%23revise%20%23BuiltWithRevise%20" target="_blank">
                     <p className="shareButton">share on twitter</p>
                   </a>
                 </div>
