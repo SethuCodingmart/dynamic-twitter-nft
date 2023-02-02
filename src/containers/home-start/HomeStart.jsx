@@ -8,11 +8,13 @@ const HomeStart = () => {
       <p className="banner-get-started-sub-heading">
         Which changes the more you tweet with #BuiltWithRevise
       </p>
-      <span className="banner-get-started-button">
-        <Link to="/mint-nft" className="mintNFTButton">
+
+      <Link to="/mint-nft" className="mintNFTButton">
+        <span className="banner-get-started-button">
           Mint NFT
-        </Link>
-      </span>
+        </span>
+      </Link>
+
     </div>
   );
 };

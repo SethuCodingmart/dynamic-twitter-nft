@@ -138,8 +138,12 @@ const MyNFT = () => {
         if (receipt.status === 1) {
           setWallet(true);
           setError(true);
+          const url = `https://mumbai.polygonscan.com/tx/${tx.hash}`
           setAccountErrorMassage(
-            "NFT minted! https://mumbai.polygonscan.com/tx/" + tx.hash
+            <a href={url} target="_blank">
+              NFT minted! https://mumbai.polygonscan.com/tx/{tx.hash}
+            </a>
+
           );
         } else {
           setWallet(true);
@@ -205,7 +209,10 @@ const MyNFT = () => {
       setAccount(null);
       setWallet(false);
       setError(true);
-      setAccountErrorMassage("Make sure you have MetaMask!");
+      setAccountErrorMassage(
+        <a href="https://metamask.io/" target="_blank">
+          Get MetaMask - https://metamask.io/
+        </a>)
       return null;
     } else {
       // console.log("We have the ethereum object", ethereum);
@@ -241,6 +248,7 @@ const MyNFT = () => {
   };
 
   const mintOnPolygon = async () => {
+    // eslint-disable-next-line no-lone-blocks
     {
       if (account === null || account === undefined) {
         setLoader(true);
@@ -324,7 +332,7 @@ const MyNFT = () => {
         </div>
       );
     } else {
-      return <p>Connected to Mumbai Network</p>;
+      return <p style={{ color: 'white' }}>Connected to Mumbai Network</p>;
     }
   };
 
