@@ -2,6 +2,10 @@
   background-color: #202020;
 }
 
+.switch-btn {
+  border: white;
+}
+
 .my-nft-display {
   background-image: url("../../assets/images/my-nft-background-image.svg");
   padding-top: 50px;
@@ -36,11 +40,10 @@
   margin-right: 20px;
 }
 
-
 .userProfileImage {
-    width: 59px;
-      height: 59px;
-    border: 1px solid #000;
+  width: 59px;
+  height: 59px;
+  border: 1px solid #000;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -209,10 +212,10 @@
     text-decoration: none;
     color: #f3f2f2;
   }
-                                                                &:hover {
-                                                                  text-decoration: none;
-                                                                  color: #f3f2f2;
-                                                                }
+  &:hover {
+    text-decoration: none;
+    color: #f3f2f2;
+  }
 }
 
 .static-text {
@@ -237,42 +240,40 @@
   flex-direction: column;
 }
 
-.rank-image{
+.rank-image {
   margin-bottom: 20px;
 }
 
-
-.minting-nft-off-chain{
+.minting-nft-off-chain {
   display: flex;
   justify-content: center;
   flex-direction: row;
 }
 
-.mint-on-polygon{
-font-family: 'Manrope';
-font-style: normal;
-font-weight: 700;
-font-size: 14px;
-color: #AFCF2E;
-border-radius: 30px;
-padding: 5px 10px;
-border: 1px solid #AFCF2E;
-cursor: pointer;
-margin-bottom: 20px;
+.mint-on-polygon {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  color: #afcf2e;
+  border-radius: 30px;
+  padding: 5px 10px;
+  border: 1px solid #afcf2e;
+  cursor: pointer;
+  margin-bottom: 20px;
 }
 
-
-.mint-on-ethereum{
-font-family: 'Manrope';
-font-style: normal;
-font-weight: 700;
-font-size: 14px;
-color: #AFCF2E;
-border-radius: 30px;
-border: 1px solid #AFCF2E;
-padding: 5px 10px;
-cursor: pointer;
-margin-bottom: 20px;
+.mint-on-ethereum {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  color: #afcf2e;
+  border-radius: 30px;
+  border: 1px solid #afcf2e;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-bottom: 20px;
 }
 
 .revisions {
@@ -366,7 +367,7 @@ margin-bottom: 20px;
   justify-content: space-between;
   align-items: center;
   color: #f3f2f2;
-&:visited {
+  &:visited {
     text-decoration: none;
     color: #f3f2f2;
   }
@@ -394,20 +395,20 @@ margin-bottom: 20px;
 .shareButton {
   background: #056af9;
   border-radius: 40px;
-      color: #f3f2f2;
-        padding: 8px 14px;
+  color: #f3f2f2;
+  padding: 8px 14px;
   cursor: pointer;
   text-align: center;
-  
-    &:visited {
-      text-decoration: none;
-      color: #f3f2f2;
-    }
-  
-    &:hover {
-      text-decoration: none;
-      color: #f3f2f2;
-    }
+
+  &:visited {
+    text-decoration: none;
+    color: #f3f2f2;
+  }
+
+  &:hover {
+    text-decoration: none;
+    color: #f3f2f2;
+  }
 }
 
 .empty_tweet_details {
@@ -424,8 +425,10 @@ margin-bottom: 20px;
   font-size: 14px;
   color: white;
   border-radius: 30px;
-  border: 1px solid #AFCF2E;
+  border: 1px solid #afcf2e;
   padding: 5px 10px;
+  display: flex;
+  justify-content: center;
 }
 @media (max-width: 768px) {
   .my-nft-container {
@@ -450,14 +453,13 @@ margin-bottom: 20px;
     margin-bottom: 20px;
   }
 
-
   .hashtag-tweets {
     margin-bottom: 20px;
   }
 
   .more-tweets {
     margin-bottom: 20px;
-  } 
+  }
   .revisions {
     margin-bottom: 20px;
   }
@@ -465,7 +467,7 @@ margin-bottom: 20px;
   .learn-more {
     margin-bottom: 20px;
     flex-direction: column;
-  .learnMoreImage {
+    .learnMoreImage {
       margin-right: 0;
     }
   }
@@ -473,19 +475,18 @@ margin-bottom: 20px;
     margin-bottom: 20px;
     flex-direction: column;
   }
-.shareImage {
-  margin-right: 0;
-}
+  .shareImage {
+    margin-right: 0;
+  }
 
   .my-nft-display {
     padding-top: 10px;
     background-image: none;
   }
 
-.minting-nft-off-chain{
-  flex-direction: column;
-}
-
+  .minting-nft-off-chain {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 300px) {
@@ -521,7 +522,7 @@ margin-bottom: 20px;
   .share {
     padding: 5px;
   }
-.wallet-address {
-  font-size: 11px;
-}
+  .wallet-address {
+    font-size: 11px;
+  }
 }

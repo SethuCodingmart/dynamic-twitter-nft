@@ -1,10 +1,10 @@
-.get-started-container{
+.get-started-container {
   background-color: #202020 !important;
 }
 
-.get-started{
+.get-started {
   background-image: url("../../assets/images/get-started-background-image.svg");
-background-size: cover;
+  background-size: cover;
 }
 
 .get-started-on-click-wrapper {
@@ -77,7 +77,7 @@ background-size: cover;
   border: none;
 }
 
-.twitter-image-icon{
+.twitter-image-icon {
   margin-right: 10px;
 }
 
@@ -86,23 +86,24 @@ background-size: cover;
   border: 1px solid red;
   background: #ee5757;
   padding: 5px;
-  font-weight: bold;
+  // font-weight: bold;
+  word-break: break-all;
 }
 
-@media (max-width:1000px) {
+@media (max-width: 1000px) {
   .get-started-wrapper {
- height: 100vh;
- display: flex;
- justify-content: space-between;
- flex-direction: column;
-  background-color: #202020 !important;
-}
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: #202020 !important;
+  }
 }
 
 @media (max-width: 600px) {
-.get-started{
-  background-image: none;
-}
+  .get-started {
+    background-image: none;
+  }
 
   .get-started-on-click-wrapper {
     display: flex;
@@ -165,8 +166,8 @@ background-size: cover;
     color: white;
     font-family: "Manrope";
     font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
+    // font-weight: 700;
+    font-size: 12px;
     padding: 10px;
     text-align: center;
   }
@@ -188,14 +189,15 @@ background-size: cover;
     align-items: center;
   }
 
-  .twitter-image-icon{
+  .twitter-image-icon {
     margin-right: 10px;
   }
 }
 
 @media (max-width: 350px) {
-.get-started-on-click-box {
-    padding: 10px 20px;}
+  .get-started-on-click-box {
+    padding: 10px 20px;
+  }
 }
 
 @media (min-width: 1200px) {

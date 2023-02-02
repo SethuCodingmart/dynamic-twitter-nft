@@ -17,7 +17,7 @@ import "./myNFT.scss";
 
 const Twitter = require("../../utils/Twitter.json");
 const ethers = require("ethers");
-const CONTRACT_ADDRESS = "0xCfC79d01f8e9f52c261603608a450e58B0D38e1b";
+const CONTRACT_ADDRESS = "0x7e8a6E80Caee4182922Df7810674eF6D73541D86";
 
 const MyNFT = () => {
   const [userProfileImage, setUserProfileImage] = useState("");
@@ -34,6 +34,7 @@ const MyNFT = () => {
   const [loader, setLoader] = useState(false);
   const [error, setError] = useState(false);
   const [wallet, setWallet] = useState(true);
+  const [network, setNetwork] = useState(null);
   const [accountErrorMessage, setAccountErrorMassage] = useState("");
 
   const REVISE = process.env.REACT_APP_REVISE_APP_NETWORK;
@@ -49,15 +50,15 @@ const MyNFT = () => {
       navigate("/mint-nft");
     } else {
       tweetDetails(twitterId);
-      const {ethereum} = window
+      const { ethereum } = window;
       if (ethereum) {
-        window.ethereum.on("accountsChanged", function (accounts) {
-          if (accounts.length <= 0) {
-            navigate("/mint-nft");
-          } else {
-            navigate("/mint-nft");
-          }
-        })
+        // window.ethereum.on("accountsChanged", function (accounts) {
+        //   if (accounts.length <= 0) {
+        //     navigate("/mint-nft");
+        //   } else {
+        //     navigate("/mint-nft");
+        //   }
+        // });
       }
     }
   }, [twitterId, account]);
@@ -219,14 +220,24 @@ const MyNFT = () => {
       setWallet(true);
       setError(false);
       setAccountErrorMassage("");
-      return accounts[0];
     } else {
       setAccount(null);
       setWallet(false);
       setError(false);
       setAccountErrorMassage("");
-      return null;
     }
+
+    const chainId = await ethereum.request({ method: "eth_chainId" });
+    setNetwork(chainId);
+    console.log({ chainId });
+
+    ethereum.on("chainChanged", handleChainChanged);
+
+    // Reload the page when they change networks
+    function handleChainChanged(_chainId) {
+      window.location.reload();
+    }
+    return accounts.length > 0 ? accounts[0] : null;
   };
 
   const mintOnPolygon = async () => {
@@ -251,6 +262,72 @@ const MyNFT = () => {
       }
     }
   };
+
+  const switchNetwork = async () => {
+    if (window.ethereum) {
+      try {
+        // Try to switch to the Mumbai testnet
+        await window.ethereum.request({
+          method: "wallet_switchEthereumChain",
+          params: [{ chainId: "0x13881" }], // Check networks.js for hexadecimal network ids
+        });
+      } catch (error) {
+        // This error code means that the chain we want has not been added to MetaMask
+        // In this case we ask the user to add it to their MetaMask
+        if (error.code === 4902) {
+          try {
+            await window.ethereum.request({
+              method: "wallet_addEthereumChain",
+              params: [
+                {
+                  chainId: "0x13881",
+                  chainName: "Polygon Mumbai Testnet",
+                  rpcUrls: ["https://rpc-mumbai.maticvigil.com/"],
+                  nativeCurrency: {
+                    name: "Mumbai Matic",
+                    symbol: "MATIC",
+                    decimals: 18,
+                  },
+                  blockExplorerUrls: ["https://mumbai.polygonscan.com/"],
+                },
+              ],
+            });
+          } catch (error) {
+            console.log(error);
+          }
+        }
+        console.log(error);
+      }
+    } else {
+      // If window.ethereum is not found then MetaMask is not installed
+      alert(
+        "MetaMask is not installed. Please install it to use this app: https://metamask.io/download.html"
+      );
+    }
+  };
+
+  const renderInputForm = () => {
+    // If not on Polygon Mumbai Testnet, render the switch button
+    if (network !== "0x13881") {
+      return (
+        <div className="connect-wallet-container">
+          <p style={{ color: "red" }}>
+            Please switch to Polygon Mumbai Testnet
+          </p>
+          <p
+            className="wallet-address"
+            style={{ cursor: "pointer" }}
+            onClick={() => switchNetwork()}
+          >
+            Click here to switch
+          </p>
+        </div>
+      );
+    } else {
+      return <p>Connected to Mumbai Network</p>;
+    }
+  };
+
   return (
     <>
       {!isLoading ? (
@@ -313,29 +390,35 @@ const MyNFT = () => {
                   className="rank-image img-fluid"
                 />
                 <div className="minting-nft-off-chain">
-                  <p
-                    className="mint-on-polygon"
-                    onClick={() => mintOnPolygon()}
-                  >
-                    <img
-                      src={
-                        account === null || account === undefined
-                          ? metamask
-                          : polygon
-                      }
-                      alt="polygon"
-                      style={{ margin: "5px", height: "20px" }}
-                    />
-                    {account === null || account === undefined
-                      ? "Connect to Wallet"
-                      : "Mint on Polygon"}
-                  </p>
+                  {network === "0x13881" && (
+                    <p
+                      className="mint-on-polygon"
+                      onClick={() => mintOnPolygon()}
+                    >
+                      <img
+                        src={
+                          account === null || account === undefined
+                            ? metamask
+                            : polygon
+                        }
+                        alt="polygon"
+                        style={{ margin: "5px", height: "20px" }}
+                      />
+                      {account === null || account === undefined
+                        ? "Connect to Wallet"
+                        : "Mint on Polygon"}
+                    </p>
+                  )}
                 </div>
                 {wallet ? (
-                  <p className="wallet-address">{account || ""}</p>
+                  <p className="wallet-address">
+                    {" "}
+                    Wallet {account?.slice(0, 6)}...{account?.slice(-4)}
+                  </p>
                 ) : (
                   ""
                 )}
+                {account && renderInputForm()}
                 {error ? (
                   <p className="error-message">{accountErrorMessage}</p>
                 ) : (
@@ -389,7 +472,10 @@ const MyNFT = () => {
                   <p className="shareText">
                     Share your new NFT with your friends and family
                   </p>
-                  <a href="https://twitter.com/intent/tweet?text=Say%20something...%20%23revise%20%23BuiltWithRevise%20" target="_blank">
+                  <a
+                    href="https://twitter.com/intent/tweet?text=Say%20something...%20%23revise%20%23BuiltWithRevise%20"
+                    target="_blank"
+                  >
                     <p className="shareButton">share on twitter</p>
                   </a>
                 </div>

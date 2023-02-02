@@ -76,4 +76,5 @@ const checkWalletConnected = async () => {
     return null;
   }
 };
+
 export { checkWalletConnected, connectWallet, mintNFT };
