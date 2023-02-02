@@ -23,16 +23,16 @@ const Footer = () => {
           applications, utilities and data feeds.
         </div>
         <div className="footer-icons">
-          <a href="https://www.facebook.com/ReviseNFT/">
+          <a href="https://www.facebook.com/ReviseNFT/" target="_blank">
             <img src={facebook} alt="revise" className="icon" />
           </a>
-          <a href="https://www.instagram.com/revisenft/">
+          <a href="https://www.instagram.com/revisenft/" target="_blank">
             <img src={instagram} alt="revise" className="icon" />
           </a>
-          <a href="https://twitter.com/ReviseNFT">
+          <a href="https://twitter.com/ReviseNFT" target="_blank">
             <img src={twitter} alt="revise" className="icon" />
           </a>
-          <a href="https://discord.com/invite/aMRnzBR5Pj">
+          <a href="https://discord.com/invite/aMRnzBR5Pj" target="_blank">
             <img src={discord} alt="revise" className="icon" />
           </a>
         </div>
