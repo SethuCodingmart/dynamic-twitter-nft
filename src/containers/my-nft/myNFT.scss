@@ -1,3 +1,5 @@
+@import '../../styles/variables.scss';
+
 .my-nft-wrapper {
   background-color: #202020;
 }
@@ -328,12 +330,6 @@
   }
 }
 
-.image-grid {
-  grid-area: imageGrid;
-  height: 150px;
-  background-color: red
-}
-
 .learn-more {
   grid-area: learnMore;
   background: #121212;
@@ -441,6 +437,67 @@
   display: flex;
   justify-content: center;
 }
+
+// Badges section
+.image-grid {
+  grid-area: imageGrid;
+  background: $color-grey-0;
+  border-radius: 10px;
+  padding: 14px 24px 20px;
+}
+.badge{
+  width: 100%;
+  &Title{
+    @include flex-center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    div{
+      @include flex-center;
+      gap: 12px;
+    }
+    h2{
+      @include font-16-bold;
+      letter-spacing: 0.2px;
+      color: $color-yellow-0;
+      margin: 0;
+      letter-spacing: 0.2px;
+    }
+    a{
+      @include font-12-bold;
+      color: $color-white-0;
+      padding: 2px 7px;
+      background-color: $color-blue-0;
+      border-radius: 43px;
+      cursor: pointer;
+      letter-spacing: 0.2px;
+    }
+    p{
+      @include font-12-bold;
+      color: $color-white-0;
+      padding: 2px 7px;
+      border-radius: 43px;
+      cursor: pointer;
+      letter-spacing: 0.2px;
+      border: 1px solid $color-white-0;
+    }
+  }
+  &Content{
+    @include flex-center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  &Card{
+    flex-basis: 18.19%;
+    width: 100%;
+    min-height: 160px;
+    @include flex-center;
+    justify-content: center;
+    border: 1px solid #464646;
+    border-radius: 13px;
+    background-color: $color-black-0;
+  }
+}
+
 
 @media (max-width: 768px) {
   .my-nft-container {

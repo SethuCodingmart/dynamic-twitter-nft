@@ -1,0 +1,33 @@
+// colors 
+$color-white-0 : #ffffff;
+$color-black-0 : #000000;
+
+$color-yellow-0 : #D7FF3A;
+
+$color-blue-0 : #056AF9;
+$color-grey-0 : #121212;
+
+
+
+
+// Mixins
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+}
+
+
+
+// Font mixins 
+// Regular fonts
+@mixin font-12-bold($line-height:16px) {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: $line-height;
+}
+
+@mixin font-16-bold($line-height:22px) {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: $line-height;
+}

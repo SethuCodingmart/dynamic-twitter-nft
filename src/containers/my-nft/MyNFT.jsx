@@ -14,6 +14,7 @@ import Footer from "../../components/footer/Footer";
 import { useNavigate } from "react-router-dom";
 import MyNFTLoader from "./MyNFTLoader";
 import "./myNFT.scss";
+import Badges from "./Badges";
 
 const Twitter = require("../../utils/Twitter.json");
 const ethers = require("ethers");
@@ -456,7 +457,7 @@ const MyNFT = () => {
                 )}
               </div>
 
-              <div className='image-grid'></div>
+              <Badges />
 
 
               <div className="learn-more">
