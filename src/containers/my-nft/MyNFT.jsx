@@ -455,6 +455,10 @@ const MyNFT = () => {
                   </div>
                 )}
               </div>
+
+              <div className='image-grid'></div>
+
+
               <div className="learn-more">
                 <div className="learnMoreImage">
                   <img src={learnMore} alt="revise" />

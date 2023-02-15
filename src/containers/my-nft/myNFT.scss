@@ -20,6 +20,7 @@
     "hashtagTweets rank rank rank revisions revisions"
     "hashtagTweets rank rank rank revisions revisions"
     "moreTweets rank rank rank revisions revisions"
+    "imageGrid imageGrid imageGrid imageGrid imageGrid imageGrid"
     "learnMore learnMore learnMore share share share"
     "learnMore learnMore learnMore share share share";
   gap: 20px;
@@ -208,10 +209,12 @@
   border-radius: 10px;
   padding: 1px 5px;
   text-decoration: none;
+
   &:visited {
     text-decoration: none;
     color: #f3f2f2;
   }
+
   &:hover {
     text-decoration: none;
     color: #f3f2f2;
@@ -317,11 +320,18 @@
   color: #f3f2f2;
   background-color: #056af9;
   text-decoration: none;
+
   &:visited {
     text-decoration: none;
     color: #f3f2f2;
     background-color: #056af9;
   }
+}
+
+.image-grid {
+  grid-area: imageGrid;
+  height: 150px;
+  background-color: red
 }
 
 .learn-more {
@@ -367,6 +377,7 @@
   justify-content: space-between;
   align-items: center;
   color: #f3f2f2;
+
   &:visited {
     text-decoration: none;
     color: #f3f2f2;
@@ -430,6 +441,7 @@
   display: flex;
   justify-content: center;
 }
+
 @media (max-width: 768px) {
   .my-nft-container {
     display: grid;
@@ -460,6 +472,7 @@
   .more-tweets {
     margin-bottom: 20px;
   }
+
   .revisions {
     margin-bottom: 20px;
   }
@@ -467,14 +480,17 @@
   .learn-more {
     margin-bottom: 20px;
     flex-direction: column;
+
     .learnMoreImage {
       margin-right: 0;
     }
   }
+
   .share {
     margin-bottom: 20px;
     flex-direction: column;
   }
+
   .shareImage {
     margin-right: 0;
   }
@@ -522,6 +538,7 @@
   .share {
     padding: 5px;
   }
+
   .wallet-address {
     font-size: 11px;
   }
