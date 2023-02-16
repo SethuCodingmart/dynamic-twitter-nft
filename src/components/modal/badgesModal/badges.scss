@@ -1,0 +1,71 @@
+@import '../../../styles/variables.scss';
+
+.badgesModal{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
+    @include flex-center;
+    justify-content: center;
+    &Heading{
+        max-width: 380px;
+        margin: auto;
+        @include flex-center;
+        justify-content: space-between;
+        padding-bottom: 30px;
+        h2{
+            @include font-bold-32($line-height: 115%);
+            color: $color-yellow-0;
+            margin: 0;
+        }
+        a{
+            @include font-bold-20;
+            color: $color-white-0 !important;
+            padding: 2px 16px;
+            background: $color-blue-0;
+            border-radius: 30px;
+            margin: 0;
+        }
+    }
+    &Content{
+        @include flex-center;
+        gap: 35px;
+    }
+    &Card{
+        text-align: center;
+        padding: 44px 22px;
+        @include flex-center;
+        flex-direction: column;
+        gap: 26px;
+        max-width: 373px;
+        background: $color-black-1;
+        border: 1px solid $color-grey-1;
+        border-radius: 8px;
+        h3{
+            @include font-bold-32;
+            padding-bottom: 8px;
+            color: $color-white-0;
+            margin: 0;
+        }
+        p{
+            @include font-medium-20;
+            color: $color-white-1;
+            margin: 0;
+        }
+        label{
+            @include font-medium-14;
+            letter-spacing: 0.2px;
+            color: $color-grey-2;
+        }
+    }
+    &Close{
+        max-width: 380px;
+        margin: auto;
+        padding-top: 24px;
+        img{
+            cursor: pointer;
+        }
+    }
+}

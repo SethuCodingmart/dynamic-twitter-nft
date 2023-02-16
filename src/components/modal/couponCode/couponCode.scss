@@ -1,0 +1,81 @@
+@import "../../../styles/variables.scss";
+
+.coupon_wrapper {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: $color-black-0;
+  opacity: 0.9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .inner_coupon_wrapper {
+    max-width: 580px;
+    background: $color-black-1;
+    border: 1px solid $color-grey-1;
+    border-radius: 7px;
+    position: relative;
+    padding: 56px;
+    text-align: center;
+    .cancle_btn_pos {
+      position: absolute;
+      top: -16px;
+      right: -16px;
+      cursor: pointer;
+    }
+    .claim_badge {
+      font-family: "Manrope";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 115%;
+      text-align: center;
+      letter-spacing: -1px;
+      color: $color-white-0;
+      margin: 6px 0 0 0;
+    }
+    p {
+      font-family: "Manrope";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 150%;
+      margin: 42px 0;
+      text-align: center;
+      color: $color-white-1;
+    }
+    input {
+      background: transparent;
+      padding: 0 12px 14px;
+      border: none;
+      outline: none;
+      font-family: "Manrope";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 115%;
+      letter-spacing: 3.5px;
+      color: $color-white-0;
+      text-align: center;
+      border-bottom: 2px solid #FFFFFF;
+      width: 100%;
+      &::placeholder {
+        color: $color-black-2;
+      }
+    }
+    button{
+      outline: none;
+      border: none;
+      @include font-bold-20;
+      color: $color-white-0 !important;
+      padding: 2px 16px;
+      background: $color-blue-0;
+      border-radius: 30px;
+      margin: 0;
+      float: right;
+      margin-top: 24px;
+    }
+  }
+}

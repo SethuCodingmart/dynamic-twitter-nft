@@ -1,33 +1,61 @@
-// colors 
-$color-white-0 : #ffffff;
-$color-black-0 : #000000;
+// colors
+$color-white-0: #ffffff;
+$color-white-1:#ededed;
+$color-black-0: #000000;
+$color-black-1: #121212;
+$color-black-2:#313131;
 
-$color-yellow-0 : #D7FF3A;
+$color-yellow-0: #d7ff3a;
 
-$color-blue-0 : #056AF9;
-$color-grey-0 : #121212;
+$color-blue-0: #056af9;
 
-
+$color-grey-0: #121212;
+$color-grey-1: #666262;
+$color-grey-2: #444444;
 
 
 // Mixins
 @mixin flex-center {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+}
+
+// Font mixins
+// Regular Fonts
+@mixin font-medium-14($line-height: 19px) {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: $line-height;
+}
+
+@mixin font-medium-20($line-height: 150%) {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: $line-height;
 }
 
 
-
-// Font mixins 
-// Regular fonts
-@mixin font-12-bold($line-height:16px) {
-    font-weight: 600;
-    font-size: 12px;
-    line-height: $line-height;
+// Semibold fonts
+@mixin font-semibold-12($line-height: 16px) {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: $line-height;
 }
 
-@mixin font-16-bold($line-height:22px) {
-    font-weight: 600;
-    font-size: 16px;
-    line-height: $line-height;
+@mixin font-semibold-16($line-height: 22px) {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: $line-height;
+}
+
+// font extrabold
+@mixin font-bold-20($line-height: 150%) {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: $line-height;
+}
+@mixin font-bold-32($line-height: 110%) {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: $line-height;
 }
