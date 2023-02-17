@@ -28,3 +28,10 @@ html,body{
     -webkit-font-smoothing : antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+.inActive{
+    filter: drop-shadow(0px 8px 10px #0C0C0C);
+    img{
+        opacity: 0.15;
+    }
+}

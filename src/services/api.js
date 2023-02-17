@@ -10,3 +10,12 @@ const fetchTweetDetails = async (twitterId) => {
 export {
     fetchTweetDetails
 }
+
+const twitterId = localStorage.getItem("twitterId");
+
+export const fetchBadges = async () => {
+    const res = await axios.get(`https://revisequest.loca.lt/api/user/all/badge/${twitterId}`)
+    return res;
+}
+
+

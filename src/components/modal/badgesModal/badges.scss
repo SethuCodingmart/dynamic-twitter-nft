@@ -9,6 +9,7 @@
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
     @include flex-center;
     justify-content: center;
+    z-index: 1;
     &Heading{
         max-width: 380px;
         margin: auto;
@@ -30,20 +31,34 @@
             cursor: pointer;
         }
     }
+    &Container{
+        width: 100%;
+    }
     &Content{
         @include flex-center;
         gap: 35px;
+        position: relative;
+    }
+    &Cardcontainer{
+        max-width: 408px;
     }
     &Card{
         text-align: center;
         padding: 44px 22px;
         @include flex-center;
         flex-direction: column;
+        width: 373px;
+        max-width: 100%;
+        margin-right: 35px;
         gap: 26px;
-        max-width: 373px;
         background: $color-black-1;
         border: 1px solid $color-grey-1;
         border-radius: 8px;
+        img{
+            display: inline-block;
+            max-width: 190px;
+            max-height: 190px;
+        }
         h3{
             @include font-bold-32;
             padding-bottom: 8px;
@@ -54,6 +69,7 @@
             @include font-medium-20;
             color: $color-white-1;
             margin: 0;
+            min-height: 60px;
         }
         label{
             @include font-medium-14;
@@ -68,5 +84,31 @@
         img{
             cursor: pointer;
         }
+    }
+    .slick-slider{
+        position: static;
+    }
+    .slick-list{
+        padding-left: 120px;
+    }
+    .slick-prev{
+        bottom: -94px;
+        left: 55%;
+        &::before{
+            content: url(../../../assets/images/modal/back.svg);
+        }
+    }
+    .slick-next{
+        bottom: -72px;
+        left: 60%;
+        transform: rotate(180deg);
+        &::before{
+            content: url(../../../assets/images/modal/back.svg);
+        }
+    }
+    .slick-prev, .slick-next{
+        width: 44px;
+        height: 44px;
+        top: auto;
     }
 }
