@@ -1,15 +1,23 @@
 import React, { useState } from "react";
 import downloadIcon from "../../../assets/images/modal/DownloadIcon.svg";
 import cancleIcon from "../../../assets/images/modal/Ellipse 21.svg";
+import { addCoupon } from "../../../services/api";
 
 import "./couponCode.scss";
 
 function CouponCode({ setCouponCodeModal }) {
 
+  const twitterId = localStorage.getItem("twitterId");
   const [coupon, setCoupon] = useState("")
 
-  const handleCoupon = () => { 
-    
+
+  const handleCoupon = async () => { 
+    const body = {
+      couponCode : coupon,
+      userId : twitterId
+    }
+    const result = await addCoupon(body)
+    console.log("result", result)
   }
 
 

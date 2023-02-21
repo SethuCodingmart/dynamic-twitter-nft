@@ -7,11 +7,6 @@ import CouponCode from "../../components/modal/couponCode/CouponCode";
 const Badges = () => {
   const [couponCodeModal, setCouponCodeModal] = useState(false);
   const [badgeModal, setBadgeModal] = useState(false);
-
-  // const badges = [
-  //   Badge, Badge, Badge, Badge, Badge, Badge, Badge, Badge, Badge, Badge, Badge, Badge, Badge, Badge, Badge, Badge, Badge, Badge, Badge, Badge, 
-  // ]
-
   const [badges, setbadges] = useState([])
 
   useEffect(() => {
@@ -21,7 +16,6 @@ const Badges = () => {
   const fetchBadgeApi = async () => {
     const result = await fetchBadges()
     setbadges(result.data)
-    console.log(result.data);
   }
 
   return (
@@ -40,7 +34,7 @@ const Badges = () => {
             badges?.map((badge) => {
               return(
                 <div className={badge.status === "locked" ? "badgeCard inActive" : "badgeCard"} onClick={() => setBadgeModal(true)}>
-                  <img src={badge.image} alt="badge" />
+                  <img src={`https://revisequest.loca.lt/${badge.image}`} alt="badge" />
                 </div>
               )
             })
