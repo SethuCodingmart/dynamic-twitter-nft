@@ -1,0 +1,55 @@
+.badge-list-table-wrapper {
+
+    .badge-list-table-container {
+        background-color: #0D0D0D;
+        width: 100%;
+
+        .badge-list-header {
+            border-bottom: 2px solid #2F2F2F;
+            border-top: 2px solid #2F2F2F;
+
+            .title {
+                padding: 5px 0;
+                font-weight: 700;
+                font-size: 14px;
+                color: #2F2F2F;
+                padding-left: 20px;
+            }
+        }
+
+        .badge-list-table-data {
+            border-bottom: 1px solid #2F2F2F;
+            border-collapse: collapse;
+
+            &:last-child {
+                border: none !important;
+                border-radius: 0 0 15px 15px !important;
+            }
+
+            .table-data {
+                font-weight: 500;
+                font-size: 14px;
+                color: #EDEDED;
+                padding: 10px 0;
+                padding-left: 20px;
+
+                &:nth-child(2) {
+                    color: #5CAFFD;
+                    cursor: pointer;
+
+                    &:hover {
+                        text-decoration: underline;
+
+                    }
+                }
+            }
+        }
+
+        .no-badges {
+            color: white;
+            font-size: 22px;
+            font-weight: 500;
+        }
+    }
+
+}

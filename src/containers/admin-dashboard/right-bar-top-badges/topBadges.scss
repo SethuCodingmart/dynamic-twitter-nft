@@ -1,0 +1,35 @@
+.right-bar-top-badges-wrapper {
+    background: #0D0D0D;
+    margin-bottom: 30px;
+
+    .right-bar-top-badges-container {
+        &-header {
+            font-weight: 500;
+            font-size: 16px;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            padding-bottom: 10px;
+        }
+
+        .right-bar-top-badge-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .right-bar-top-badge-claims-number {
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 0.2px;
+            color: #919191;
+        }
+
+        .right-bar-top-badge-claims-text {
+            font-weight: 400;
+            font-size: 12px;
+            letter-spacing: 0.2px;
+            color: #919191;
+            margin-top: -3px;
+        }
+    }
+}

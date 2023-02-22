@@ -1,0 +1,110 @@
+.admin-sign-in-page-wrapper {
+    background: #202020;
+    min-height: 100vh;
+
+    .admin-sign-in-page-container {
+        background-image: url('../../../assets/admin-dashboard/login-background-image.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        object-fit: contain;
+        min-height: calc(100vh - 50px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .admin-sign-in-page-form-wrapper {
+        background: #121212;
+        border: 1px solid #666262;
+        border-radius: 7px;
+        width: 70%;
+        min-height: 70vh;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .admin-sign-in-page {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .admin-sign-in-page-form {
+        display: flex;
+        flex-direction: column;
+        padding: 0 30px;
+    }
+
+    .admin-sign-in-page-form-header {
+        font-weight: 700;
+        font-size: 32px;
+        color: #FFFFFF;
+        margin-bottom: 30px;
+    }
+
+    .admin-sign-in-page-form-label {
+        margin-bottom: 20px;
+    }
+
+    .admin-sign-in-page-form-title {
+        font-weight: 500;
+        font-size: 16px;
+        color: #FFFFFF;
+        margin-bottom: 5px;
+    }
+
+    .admin-sign-in-page-form-tooltip {
+        margin-left: 5px;
+    }
+
+    .admin-sign-in-page-form-field {
+        height: 43px;
+        border: 1px solid #575757;
+        border-radius: 5px;
+        background: #121212;
+        width: 90%;
+        color: white;
+        padding: 10px;
+        width: 350px;
+        font-size: 16px;
+
+        &::placeholder {
+            color: #343434;
+            font-size: 16px;
+        }
+    }
+
+    .login-page-image-wrapper {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        border-left: 1px solid #575757;
+        padding-left: 50px;
+    }
+
+    .admin-sign-in-page-button-wrapper {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .admin-sign-in-page-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        height: 42px;
+        background: #D7FF3A;
+        border-radius: 5px;
+        font-size: 20px;
+        color: #121212;
+        font-weight: 700;
+        width: 100px;
+        margin-top: 20px;
+    }
+
+    .login-form-error-message {
+        color: #f14242;
+        font-weight: 800;
+        font-size: 20px;
+    }
+}

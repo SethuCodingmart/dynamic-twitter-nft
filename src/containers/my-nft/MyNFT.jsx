@@ -61,6 +61,7 @@ const MyNFT = () => {
         // });
       }
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [twitterId, account]);
 
   //getting the tweet details
@@ -140,7 +141,7 @@ const MyNFT = () => {
           setError(true);
           const url = `https://mumbai.polygonscan.com/tx/${tx.hash}`
           setAccountErrorMassage(
-            <a href={url} target="_blank">
+            <a href={url} target="_blank" rel="noreferrer">
               NFT minted! https://mumbai.polygonscan.com/tx/{tx.hash}
             </a>
 
@@ -167,7 +168,7 @@ const MyNFT = () => {
         setError(true);
         setWallet(false);
         setAccountErrorMassage(
-          <a href="https://metamask.io/" target="_blank">
+          <a href="https://metamask.io/" target="_blank" rel="noreferrer">
             Get MetaMask - https://metamask.io/
           </a>
         );
@@ -210,7 +211,7 @@ const MyNFT = () => {
       setWallet(false);
       setError(true);
       setAccountErrorMassage(
-        <a href="https://metamask.io/" target="_blank">
+        <a href="https://metamask.io/" target="_blank" rel="noreferrer">
           Get MetaMask - https://metamask.io/
         </a>)
       return null;
@@ -382,7 +383,7 @@ const MyNFT = () => {
                   <a
                     href="https://twitter.com/intent/tweet?text=Say%20something...%20%23revise%20%23BuiltWithRevise%20"
                     target="_blank"
-                    className="tweet-now-button"
+                    className="tweet-now-button" rel="noreferrer"
                   >
                     Tweet #BuiltWithRevise
                   </a>
@@ -439,7 +440,7 @@ const MyNFT = () => {
                   <a
                     href={seeAllRevisions}
                     className="revisions-button-link"
-                    target="_blank"
+                    target="_blank" rel="noreferrer"
                   >
                     <p className="revisions-button">see all</p>
                   </a>
@@ -470,7 +471,7 @@ const MyNFT = () => {
 
                   <a
                     href="https://docs.revise.network/api-docs/"
-                    target="_blank"
+                    target="_blank" rel="noreferrer"
                   >
                     <p className="learnMore-button">learn more</p>
                   </a>
@@ -486,7 +487,7 @@ const MyNFT = () => {
                   </p>
                   <a
                     href="https://twitter.com/intent/tweet?text=Say%20something...%20%23revise%20%23BuiltWithRevise%20"
-                    target="_blank"
+                    target="_blank" rel="noreferrer"
                   >
                     <p className="shareButton">share on twitter</p>
                   </a>

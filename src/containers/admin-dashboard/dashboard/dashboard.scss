@@ -1,0 +1,51 @@
+.admin-dashboard-dashboard-wrapper {
+    overflow-y: auto;
+    flex: 7.8;
+    position: sticky;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    .create-badge-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 50px;
+
+        .user-name {
+            font-weight: 500;
+            font-size: 14px;
+            text-align: center;
+            color: #818181;
+            margin-right: 10px;
+        }
+
+        .create-badge {
+            font-weight: 700;
+            font-size: 14px;
+            color: #D7FF3A;
+            border: 1px solid #D7FF3A;
+            border-radius: 7px;
+            padding: 0 10px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            .add-badge-icon {
+                font-size: 24px;
+                font-style: normal;
+                padding: 0 10px;
+                font-weight: 0;
+            }
+        }
+
+    }
+
+    .dashboard-bottom-section {
+        margin-top: 10px;
+        background: #0D0D0D;
+        border-radius: 15px 15px 0 0;
+    }
+
+}

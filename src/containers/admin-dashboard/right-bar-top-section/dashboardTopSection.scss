@@ -1,0 +1,39 @@
+.dashboard-top-section-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .user-nft-details {
+        background: #0D0D0D;
+        border-radius: 10px;
+        padding: 10px 15px;
+    }
+
+    .name {
+        font-weight: 500;
+        font-size: 16px;
+        color: #FFFFFF;
+    }
+
+    .number-stats {
+        display: flex;
+        align-items: center;
+    }
+
+    .number {
+        font-weight: 700;
+        font-size: 28px;
+        color: #FFFFFF;
+        margin-right: 10px;
+    }
+
+    .icon {
+        margin-right: 5px;
+    }
+
+    .stats {
+        font-weight: 700;
+        font-size: 16px;
+        color: #D7FF3A;
+    }
+}

@@ -1,0 +1,50 @@
+.admin-dashboard-left-bar-wrapper {
+    flex: 2.5;
+    overflow-y: auto;
+    position: sticky;
+    padding: 0 0 0 30px;
+
+    .logo {
+        cursor: pointer;
+        margin-bottom: 30px;
+        margin-left: 10px;
+    }
+
+    .flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    ul {
+        padding: 0 40px 0 20px;
+
+        li {
+            font-weight: 500;
+            font-size: 16px;
+            color: #FFFFFF;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 20px;
+            cursor: pointer;
+
+            &:hover {
+                background: #222906;
+                border-radius: 5px;
+            }
+
+            &.side-navbar {
+                background: #222906;
+                border: 2px solid #D7FF3A;
+                border-radius: 5px;
+            }
+
+            .icon {
+                margin-right: 10px;
+            }
+        }
+    }
+}

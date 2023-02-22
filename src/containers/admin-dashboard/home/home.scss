@@ -1,0 +1,22 @@
+.admin-dashboard-wrapper {
+    background-color: #121212;
+    min-height: 100vh;
+    position: relative;
+}
+
+.admin-dashboard-home-container {
+    display: flex;
+    padding-top: 50px;
+    padding-bottom: 373px;
+}
+
+#footer {
+    position: absolute;
+    height: 373px;
+    bottom: 0;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 100%;
+    object-fit: contain;
+}

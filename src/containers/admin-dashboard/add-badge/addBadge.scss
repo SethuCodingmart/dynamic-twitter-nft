@@ -1,0 +1,281 @@
+    .dashboard-add-badge-wrapper {
+        background-color: #121212;
+        min-height: 100vh;
+
+        .add-badge-user-name {
+            font-weight: 500;
+            font-size: 14px;
+            color: #818181;
+            margin-right: 10px;
+            margin-bottom: 50px;
+        }
+
+        .dashboard-add-badge-back-button {
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+        }
+
+        .dashboard-add-badge-back-button-images {
+            width: 13px;
+            height: 17px;
+            margin-right: 10px;
+        }
+
+        .dashboard-add-badge-back-button-text {
+            font-weight: 700;
+            font-size: 24px;
+            color: #FFFFFF;
+        }
+
+        .dashboard-add-badge-form-wrapper {
+            margin: 0 20px;
+            background: #0D0D0D;
+            border-radius: 15px;
+            padding: 20px 0;
+        }
+
+        form>* {
+            border-bottom: 1px solid #343434;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+
+            &:last-child {
+                border: none;
+            }
+        }
+
+        .add-badge-form-title-wrapper {
+            font-weight: 500;
+            font-size: 16px;
+            color: #FFFFFF;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .add-badge-form-title-text {
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+
+        .add-badge-form-title-description-field {
+            resize: none;
+        }
+
+        input {
+            height: 43px;
+        }
+
+        input,
+        textarea,
+        select {
+            border: 1px solid #575757;
+            border-radius: 5px;
+            background-color: #0D0D0D;
+            margin-top: 5px;
+            color: white;
+            padding-left: 10px;
+
+
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+
+        select {
+            color: white;
+            width: 200px;
+            height: 43px;
+            cursor: pointer;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            -ms-appearance: none;
+            appearance: none;
+            border: none;
+            outline: none;
+
+            &::-ms-expand {
+                display: none;
+            }
+        }
+
+        .select-dropdown {
+            border: 1px solid #575757;
+            border-radius: 5px;
+            position: relative;
+            overflow: hidden;
+
+            &::after {
+                content: url('../../../assets/admin-dashboard/down-arrow-icon.svg');
+                position: absolute;
+                display: block;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                color: white;
+                pointer-events: none;
+                padding: 10px 15px;
+            }
+        }
+
+        option {
+            color: white;
+            height: 43px;
+        }
+
+        label p>img {
+            margin-left: 5px;
+        }
+
+        .add-badge-form-dropdown {
+            margin-left: 30px;
+            margin-right: 15px;
+        }
+
+        .add-badge-form-limited-use-claims {
+            // margin: 0;   
+            margin-right: 15px;
+        }
+
+        .add-badge-form-claims {
+            border: 1px solid #575757;
+            border-radius: 5px;
+        }
+
+        .add-badge-form-points {
+            margin-left: 30px;
+            margin-right: 15px;
+        }
+
+        .add-badge-form-code {
+            margin: 0;
+        }
+
+        .add-badge-attachment {
+            height: 39px;
+        }
+
+        .add-badge-upload-image {
+            border: 1px solid #575757;
+            border-radius: 5px 0px 0px 5px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 16px;
+            padding: 10px;
+            color: white;
+        }
+
+        .add-badge-select-template {
+            border: 1px solid #575757;
+            border-radius: 0px 5px 5px 0px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 16px;
+            padding: 10px;
+            color: white;
+        }
+
+        .active {
+            background: #D7FF3A;
+            color: #121212;
+        }
+
+        .add-badge-file-upload-input {
+            cursor: pointer;
+            border: 1px solid #575757;
+            border-radius: 5px;
+            display: flex;
+            padding: 10px;
+            margin: 0 30px 20px 30px;
+        }
+
+        .add-badge-file-upload-input-drag-and-drop {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px dashed;
+            border: 1px dashed #575757;
+            border-radius: 5px;
+            height: 150px;
+            width: 150px;
+        }
+
+        .add-badge-click-to-upload-text {
+            font-weight: 500;
+            font-size: 12px;
+            color: #BCBCBC;
+            border-bottom: 1px solid #9A9A9A;
+        }
+
+        .add-badge-drag-and-drop-text {
+            font-weight: 500;
+            font-size: 12px;
+            color: #797979;
+        }
+
+        .add-badge-file-upload-image-input {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-start;
+            margin-left: 20px;
+        }
+
+        .add-badge-file-upload-browse-image-button {
+            font-weight: 500;
+            font-size: 12px;
+            color: #121212;
+            padding: 5px 10px;
+            background: #D7FF3A;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+
+        .add-badge-uploaded-image-format {
+            font-weight: 500;
+            font-size: 12px;
+            color: #797979;
+        }
+
+        .add-badge-uploaded-image-size {
+            font-weight: 500;
+            font-size: 12px;
+            color: #797979;
+        }
+
+        input[type=file] {
+            // display: none;
+        }
+
+        .add-badge-uploaded-image-name {
+            color: #D7FF3A;
+        }
+
+        .add-badge-confirm-button {
+            text-align: center;
+            padding: 15px 20px;
+            height: 52px;
+            background: #D7FF3A;
+            border-radius: 5px;
+            color: black;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 16px;
+            color: #121212;
+        }
+
+        .add-badge-confirm-button-wrapper {
+            display: flex;
+            flex-direction: column;
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+    }
