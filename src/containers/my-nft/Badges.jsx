@@ -64,7 +64,7 @@ const Badges = () => {
         </div>
       </div>
     </div>
-    <BadgeAdded />
+    {/* <BadgeAdded /> */}
      {couponCodeModal && 
         <CouponCode setCouponCodeModal={setCouponCodeModal} />
       }
