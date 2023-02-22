@@ -42,7 +42,7 @@ const BadgeModal = ({ closeBadges, badgesData }) => {
                         : "badgesModalCard"
                     }>
                     <img
-                      src={`http://localhost:5000/${badge.image}`}
+                      src={`https://revisequest.loca.lt/${badge.image}`}
                       alt="Badge"
                     />
                     <div>

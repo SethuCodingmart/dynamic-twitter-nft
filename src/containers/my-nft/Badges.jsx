@@ -52,7 +52,7 @@ const Badges = () => {
             tempBadges?.map((badge, i) => {
               return(
                 <div key={i} className={badge.status === "locked" ? "badgeCard inActive" : "badgeCard"} onClick={() => setBadgeModal(true)}>
-                  <img src={`http://localhost:5000/${badge.image}`} alt="badge" />
+                  <img src={`https://revisequest.loca.lt/${badge.image}`} alt="badge" />
                 </div>
               )
             })
@@ -64,7 +64,7 @@ const Badges = () => {
         </div>
       </div>
     </div>
-    {/* <BadgeAdded /> */}
+    <BadgeAdded />
      {couponCodeModal && 
         <CouponCode setCouponCodeModal={setCouponCodeModal} />
       }

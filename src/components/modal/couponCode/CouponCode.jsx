@@ -21,9 +21,10 @@ function CouponCode({ setCouponCodeModal }) {
       return
     }
     const result = await addCoupon(body)
+    console.log("🚀 ~ file: CouponCode.jsx:24 ~ handleCoupon ~ result", result)
     setError(result?.message)
-    console.log(result?.status);
-    if(result?.status === true){
+    if(result?.status){
+      console.log("success");
       setCouponCodeModal()
     }
   }

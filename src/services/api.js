@@ -14,14 +14,14 @@ export {
 const twitterId = localStorage.getItem("twitterId");
 
 export const fetchBadges = async () => {
-    const res = await axios.get(`http://localhost:5000/api/user/all/badge/${twitterId}`)
+    const res = await axios.get(`https://revisequest.loca.lt/api/user/all/badge/${twitterId}`)
     return res;
 }
 
 export const addCoupon = async (body) => {
     try {
       const resp = await axios.post(
-        `http://localhost:5000/api/user/claim`,
+        `https://revisequest.loca.lt/api/user/claim`,
         body
       );
       return resp;
