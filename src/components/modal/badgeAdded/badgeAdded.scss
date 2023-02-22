@@ -1,0 +1,156 @@
+@import '/src/styles/variables.scss';
+
+.badgeAdded{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: $modal-bg-gredient;
+    @include flex-center;
+    justify-content: center;
+    z-index: 1;
+    padding: 24px;
+    &Container{
+        max-width: 838px;
+        background-color: $color-grey-0;
+        width: 100%;
+        border: 1px solid $color-grey-3;
+        border-radius: 8px;
+        position: relative;
+    }
+    &Header{
+        padding: 32px 32px 60px;
+        text-align: center;
+        border-bottom: 1px solid $color-grey-3;
+        h2{
+            @include font-bold-32($line-height: 115%);
+            color: $color-white-0;
+            padding-top: 16px;
+            margin: 0;
+        }
+    }
+    &Body{
+        margin: 40px;
+        border-radius: 16px;
+        background: #0D0D0D;
+    }
+    &Content{
+        
+        padding: 20px;
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        justify-content: space-between;
+        border-bottom: 1px solid #343434;
+    }
+    &Image{
+        padding: 24px;
+        background: $color-grey-6;
+        border-radius: 6px;
+    }
+    &Details{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        text-align: left;
+        h3{
+            @include font-bold-32($line-height: 115%);
+            color: $color-white-0;
+            padding-bottom: 8px;
+            letter-spacing: -1px;
+            margin: 0;
+        }
+        p{
+            @include font-medium-16;
+            color: $color-white-0;
+            max-width: 260px;
+            margin: 0;
+            padding-bottom: 8px;
+        }
+        span{
+            @include font-medium-16;
+            color: $color-grey-5;
+            margin: 0;
+        }
+    }
+    .editBtn{
+        @include flex-center;
+        gap: 6px;
+        padding: 18px;
+        width: 148px;
+        justify-content: center;
+        @include font-bold-16;
+        color: $color-yellow-0;
+        background-color: $color-black-1;
+        border:  2px solid $color-yellow-0;
+        border-radius : 6px;
+        margin: 0;
+        cursor: pointer;
+    }
+    &Footer{
+        @include flex-center;
+        justify-content: space-between;
+        div{
+            flex-grow: 1;
+            padding: 20px;
+            text-align: left;
+            &:not(:last-child){
+                border-right: 1px solid #343434;
+            }
+            p{
+                @include font-medium-16;
+                color: $color-white-0;
+                padding-bottom: 8px;
+                margin: 0;
+            }
+            h4{
+                @include font-bold-24;
+                color: $color-white-0;
+                margin: 0;
+            }
+        }
+    }
+    .closeBtn{
+        position: absolute;
+        top: -16px;
+        right: -16px;
+        cursor: pointer;
+    }
+    @media (max-width:768px){
+        &Container{
+            // position: static;
+            height: 100%;
+            overflow-y: overlay;
+        }
+        &Header{
+            padding: 12px 12px 24px;
+        }
+        &Body{
+            margin: 12px;
+        }
+        &Content{
+            padding: 16px;
+            flex-wrap: wrap;
+        }
+        &Footer{
+            flex-wrap: wrap;
+            align-items: flex-start;
+            div{
+                border-right: none !important;
+                width: 100%;
+                padding: 16px;
+                &:not(:last-child){
+                    flex-basis: 45%;
+                    border-bottom: 1px solid #343434;
+                }
+            }
+        }
+        .closeBtn{
+            top: 0;
+            right: 0;
+        }
+    }
+}

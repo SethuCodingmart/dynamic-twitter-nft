@@ -1,11 +1,9 @@
 // colors
 $color-white-0: #ffffff;
 $color-white-1:#ededed;
-
 $color-black-0: #000000;
 $color-black-1: #121212;
 $color-black-2:#313131;
-$color-black-3:#00000090;
 
 $color-yellow-0: #d7ff3a;
 
@@ -14,8 +12,11 @@ $color-blue-0: #056af9;
 $color-grey-0: #121212;
 $color-grey-1: #666262;
 $color-grey-2: #444444;
+$color-grey-3: #575757;
+$color-grey-5: #464646;
+$color-grey-6: #202020;
 
-
+$modal-bg-gredient : linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
 // Mixins
 @mixin flex-center {
   display: flex;
@@ -23,10 +24,15 @@ $color-grey-2: #444444;
 }
 
 // Font mixins
-// Regular Fonts
+// medium Fonts
 @mixin font-medium-14($line-height: 19px) {
   font-weight: 500;
   font-size: 14px;
+  line-height: $line-height;
+}
+@mixin font-medium-16($line-height: 150%) {
+  font-weight: 500;
+  font-size: 16px;
   line-height: $line-height;
 }
 
@@ -51,11 +57,23 @@ $color-grey-2: #444444;
 }
 
 // font extrabold
+@mixin font-bold-16($line-height: 150%) {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: $line-height;
+}
+
 @mixin font-bold-20($line-height: 150%) {
   font-weight: 700;
   font-size: 20px;
   line-height: $line-height;
 }
+@mixin font-bold-24($line-height: 150%) {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: $line-height;
+}
+
 @mixin font-bold-32($line-height: 110%) {
   font-weight: 700;
   font-size: 32px;

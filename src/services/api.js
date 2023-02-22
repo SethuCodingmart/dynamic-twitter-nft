@@ -11,18 +11,24 @@ export {
     fetchTweetDetails
 }
 
-
 const twitterId = localStorage.getItem("twitterId");
 
 export const fetchBadges = async () => {
-    const res = await axios.get(`https://revisequest.loca.lt/api/user/all/badge/${twitterId}`)
+    const res = await axios.get(`http://localhost:5000/api/user/all/badge/${twitterId}`)
     return res;
 }
 
 export const addCoupon = async (body) => {
-    const resp = await axios.post(`https://revisequest.loca.lt/api/user/claim`, body )
-    console.log("🚀 ~ file: api.js:25 ~ addCoupon ~ resp", resp)
-    return resp;
-}
-
+    try {
+      const resp = await axios.post(
+        `http://localhost:5000/api/user/claim`,
+        body
+      );
+      return resp;
+    } catch (error) {
+      return error.response.data;
+    }
+  };
+  
+  
 

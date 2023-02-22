@@ -10,11 +10,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const BadgeModal = ({ closeBadges, badgesData }) => {
-  var Settings = {
+  const Settings = {
     dots: false,
     arrows: true,
     infinite: true,
-    speed: 1000,
+    speed: 500,
     slidesToScroll: 1,
     autoplay: false,
     seTransform: true,
@@ -32,18 +32,30 @@ const BadgeModal = ({ closeBadges, badgesData }) => {
         </div>
         <div className="badgesModalContent">
           <Slider {...Settings}>
-            {badgesData?.map((badge) => {
+            {badgesData?.map((badge, i) => {
               return (
-                <div className="badgesModalCardcontainer">
-                  <div className={badge.status === "locked" ? "badgesModalCard inActive" : "badgesModalCard"}>
-                    <img src={badge.image} alt="Badge" />
+                <div key={i} className="badgesModalCardcontainer">
+                  <div
+                    className={
+                      badge.status === "locked"
+                        ? "badgesModalCard inActive"
+                        : "badgesModalCard"
+                    }>
+                    <img
+                      src={`http://localhost:5000/${badge.image}`}
+                      alt="Badge"
+                    />
                     <div>
                       <h3>{badge.name}</h3>
                       <p>{badge.description}</p>
                     </div>
-                    <label>{
-                        badge.status === "locked" ? "locked" : `Unlocked on ${moment(badge.date).format("Do MMM YYYY")}`
-                      }</label>
+                    <label>
+                      {badge.status === "locked"
+                        ? "locked"
+                        : `Unlocked on ${moment(badge.date).format(
+                            "Do MMM YYYY"
+                          )}`}
+                    </label>
                   </div>
                 </div>
               );

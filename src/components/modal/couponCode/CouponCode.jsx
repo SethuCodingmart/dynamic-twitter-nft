@@ -9,15 +9,23 @@ function CouponCode({ setCouponCodeModal }) {
 
   const twitterId = localStorage.getItem("twitterId");
   const [coupon, setCoupon] = useState("")
-
+  const [error, setError] = useState("");
 
   const handleCoupon = async () => { 
     const body = {
       couponCode : coupon,
       userId : twitterId
     }
+    if(coupon === ""){
+      setError("Please enter the coupon code")
+      return
+    }
     const result = await addCoupon(body)
-    console.log("result", result)
+    setError(result?.message)
+    console.log(result?.status);
+    if(result?.status === true){
+      setCouponCodeModal()
+    }
   }
 
 
@@ -35,7 +43,11 @@ function CouponCode({ setCouponCodeModal }) {
         <p>
           Enter the code provided to you by the administrator
         </p>
-        <input placeholder="ENTER CODE HERE" onChange={(e) => setCoupon(e.target.value)}/>
+        <div className="coupon_input">
+          <input placeholder="ENTER CODE HERE" onChange={(e) => setCoupon(e.target.value)}/>
+          <span>{error}</span>
+        </div>
+
         <button onClick={handleCoupon}>CLAIM</button>
       </div>
     </section>
