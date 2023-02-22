@@ -11,16 +11,20 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.2.0",
     "bootstrap": "^5.2.3",
+    "ethers": "^5.5.4",
     "html2canvas": "^1.4.1",
     "moment": "^2.29.4",
     "momentjs": "^2.0.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.6.0",
+    "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4",
-    "ethers": "^5.5.4"
+    "react-slick": "^0.29.0",
+    "react-toastify": "^9.1.1",
+    "slick-carousel": "^1.8.1",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",

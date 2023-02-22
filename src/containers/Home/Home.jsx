@@ -6,6 +6,7 @@ import FAQ from "../faq/FAQ";
 import Footer from "../../components/footer/Footer";
 import BuiltFromTheBottom from "../built-from-the-bottom/BuiltFromTheBottom";
 import "./home.scss";
+import '../../styles/common.scss';
 
 const Home = () => {
   return (

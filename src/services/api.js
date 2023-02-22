@@ -61,6 +61,7 @@ const selectTemplates = async ({ token }) => {
 
 
 export {
+<<<<<<< HEAD
     fetchTweetDetails,
     loginRoute,
     addBadge,
@@ -68,3 +69,29 @@ export {
     badgeStandings,
     selectTemplates
 }
+=======
+    fetchTweetDetails
+}
+
+const twitterId = localStorage.getItem("twitterId");
+
+export const fetchBadges = async () => {
+    const res = await axios.get(`https://revisequest.loca.lt/api/user/all/badge/${twitterId}`)
+    return res;
+}
+
+export const addCoupon = async (body) => {
+    try {
+      const resp = await axios.post(
+        `https://revisequest.loca.lt/api/user/claim`,
+        body
+      );
+      return resp;
+    } catch (error) {
+      return error.response.data;
+    }
+  };
+  
+  
+
+>>>>>>> fc499d4f78cd4d016648e7afb584fd0fdd28da8e

@@ -1,0 +1,114 @@
+@import '../../../styles/variables.scss';
+
+.badgesModal{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: $modal-bg-gredient;
+    @include flex-center;
+    justify-content: center;
+    z-index: 1;
+    &Heading{
+        max-width: 380px;
+        margin: auto;
+        @include flex-center;
+        justify-content: space-between;
+        padding-bottom: 30px;
+        h2{
+            @include font-bold-32($line-height: 115%);
+            color: $color-yellow-0;
+            margin: 0;
+        }
+        a{
+            @include font-bold-20;
+            color: $color-white-0 !important;
+            padding: 2px 16px;
+            background: $color-blue-0;
+            border-radius: 30px;
+            margin: 0;
+            cursor: pointer;
+        }
+    }
+    &Container{
+        width: 100%;
+    }
+    &Content{
+        @include flex-center;
+        gap: 35px;
+        position: relative;
+    }
+    &Cardcontainer{
+        max-width: 408px;
+    }
+    &Card{
+        text-align: center;
+        padding: 44px 22px;
+        @include flex-center;
+        flex-direction: column;
+        width: 373px;
+        max-width: 100%;
+        margin-right: 35px;
+        gap: 26px;
+        background: $color-black-1;
+        border: 1px solid $color-grey-1;
+        border-radius: 8px;
+        img{
+            display: inline-block;
+            width: 190px;
+            height: 190px;
+        }
+        h3{
+            @include font-bold-32;
+            padding-bottom: 8px;
+            color: $color-white-0;
+            margin: 0;
+        }
+        p{
+            @include font-medium-20;
+            color: $color-white-1;
+            margin: 0;
+            min-height: 60px;
+        }
+        label{
+            @include font-medium-14;
+            letter-spacing: 0.2px;
+            color: $color-grey-2;
+        }
+    }
+    &Close{
+        max-width: 380px;
+        margin: auto;
+        padding-top: 24px;
+        img{
+            cursor: pointer;
+        }
+    }
+    .slick-slider{
+        position: static;
+    }
+    .slick-list{
+        padding-left: 120px;
+    }
+    .slick-prev{
+        bottom: -94px;
+        left: 55%;
+        &::before{
+            content: url(../../../assets/images/modal/back.svg);
+        }
+    }
+    .slick-next{
+        bottom: -72px;
+        left: 60%;
+        transform: rotate(180deg);
+        &::before{
+            content: url(../../../assets/images/modal/back.svg);
+        }
+    }
+    .slick-prev, .slick-next{
+        width: 44px;
+        height: 44px;
+        top: auto;
+    }
+}

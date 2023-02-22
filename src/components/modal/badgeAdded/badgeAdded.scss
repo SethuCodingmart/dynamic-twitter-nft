@@ -1,0 +1,53 @@
+@import '/src/styles/variables.scss';
+
+.badgeAdded{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: $modal-bg-gredient;
+    @include flex-center;
+    justify-content: center;
+    z-index: 1;
+    padding: 24px;
+    &Container{
+        max-width: 838px;
+        background-color: $color-grey-0;
+        width: 100%;
+        border: 1px solid $color-grey-3;
+        border-radius: 8px;
+        position: relative;
+    }
+    &Header{
+        padding: 32px 32px 60px;
+        text-align: center;
+        border-bottom: 1px solid $color-grey-3;
+        h2{
+            @include font-bold-32($line-height: 115%);
+            color: $color-white-0;
+            padding-top: 16px;
+            margin: 0;
+        }
+    }
+    .closeBtn{
+        position: absolute;
+        top: -16px;
+        right: -16px;
+        cursor: pointer;
+    }
+    @media (max-width:768px){
+        &Container{
+            // position: static;
+            height: 100%;
+            overflow-y: overlay;
+        }
+        &Header{
+            padding: 12px 12px 24px;
+        }
+        .closeBtn{
+            top: 0;
+            right: 0;
+        }
+    }
+}

@@ -1,0 +1,160 @@
+@import "/src/styles/variables.scss";
+
+.myBadge {
+  &Body {
+    margin: 40px;
+    border-radius: 16px;
+    background: #0d0d0d;
+  }
+  &Content {
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    justify-content: space-between;
+    border-bottom: 1px solid #343434;
+  }
+  &Image {
+    padding: 24px;
+    background: $color-grey-6;
+    border-radius: 6px;
+  }
+  &Details {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+    h3 {
+      @include font-bold-32($line-height: 115%);
+      color: $color-white-0;
+      padding-bottom: 8px;
+      letter-spacing: -1px;
+      margin: 0;
+    }
+    p {
+      @include font-medium-16;
+      color: $color-white-0;
+      max-width: 260px;
+      margin: 0;
+      padding-bottom: 8px;
+    }
+    span {
+      @include font-medium-16;
+      color: $color-grey-5;
+      margin: 0;
+    }
+  }
+  .editBtn {
+    @include flex-center;
+    gap: 6px;
+    padding: 18px;
+    width: 148px;
+    justify-content: center;
+    @include font-bold-16;
+    color: $color-yellow-0;
+    background-color: $color-black-1;
+    border: 2px solid $color-yellow-0;
+    border-radius: 6px;
+    margin: 0;
+    cursor: pointer;
+  }
+  &Footer {
+    @include flex-center;
+    justify-content: space-between;
+    div {
+      flex-grow: 1;
+      padding: 20px;
+      text-align: left;
+      &:not(:last-child) {
+        border-right: 1px solid #343434;
+      }
+      p {
+        @include font-medium-16;
+        color: $color-white-0;
+        padding-bottom: 8px;
+        margin: 0;
+      }
+      h4 {
+        @include font-bold-24;
+        color: $color-white-0;
+        margin: 0;
+        max-width: 258px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        position: relative;
+        span{
+            position: absolute;
+            right: 0;
+            background: linear-gradient(90deg, rgb(13 13 13 / 36%) 47.09%, #0d0d0d 67.25%), rgba(255, 255, 255, 0);
+            width: 140px;
+            height: 100%;
+            top: 0;
+            display: flex;
+            justify-content: flex-end;
+            img{
+                display: block;
+                width: 16px;
+                cursor: pointer;
+            }
+        }
+      }
+    }
+}
+&Edit{
+    @include font-medium-12;
+    letter-spacing: 0.2px;
+    padding: 8px;
+    color: $color-black-1;
+    border-radius: 5px;
+    background-color: $color-yellow-0;
+    @include flex-center;
+    gap: 6px;
+    width: 58px;
+    justify-content: center;
+    margin: 0;
+    cursor: pointer;
+    path{
+        fill: #000000;
+    }
+}
+  @media(max-width:768px){
+    &Body{
+        margin: 12px;
+    }
+    &Content{
+        padding: 16px;
+        flex-wrap: wrap;
+    }
+    &Footer{
+        flex-wrap: wrap;
+        align-items: flex-start;
+        div{
+            border-right: none !important;
+            width: 100%;
+            padding: 16px;
+            &:not(:last-child){
+                flex-basis: 45%;
+                border-bottom: 1px solid #343434;
+            }
+        }
+    }
+  }
+}
+.Toastify__progress-bar--animated{
+    background: $color-yellow-0 !important;
+}
+.Toastify__toast-theme--light{
+    background: $color-black-1 !important;
+    border: 1px solid #575757 !important;
+}
+.Toastify__toast-body {
+    color: white;
+    @include font-semibold-22;
+
+}
+button.Toastify__close-button.Toastify__close-button--light path{
+    fill: $color-white-0 !important;
+    stroke: $color-white-0 !important;
+}
