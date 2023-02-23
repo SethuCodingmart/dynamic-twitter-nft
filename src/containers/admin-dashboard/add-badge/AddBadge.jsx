@@ -4,9 +4,10 @@ import AddBadgeIcon from '../../../assets/admin-dashboard/add-badge-icon.svg'
 import Tooltip from '../../../assets/admin-dashboard/tooltip-icon.svg'
 import fileUpload from '../../../assets/admin-dashboard/file-upload-icon.svg'
 import Dropdown from '../drop-down/Dropdown'
-import { addBadge, selectTemplates } from '../../../services/api'
+import { addBadge } from '../../../services/api'
 import { Link } from 'react-router-dom'
 import './addBadge.scss'
+import TemplateImages from '../template-images/TemplateImages'
 
 const AddBadge = () => {
     const token = localStorage.getItem('admin')
@@ -84,6 +85,9 @@ const AddBadge = () => {
                 <div className="dashboard-add-badge-form-wrapper">
 
                     <form encType="multipart/form-data" onSubmit={createBadge} id='form'>
+                        <div className='dashboard-add-badge-form-select-template'>
+                            <TemplateImages />
+                        </div>
                         <label className='add-badge-form-title-wrapper'>
                             <p className='add-badge-form-title-text'>Title</p>
                             <input type="text" className='add-badge-form-title-field add-badge-form-title-text' name='name' />

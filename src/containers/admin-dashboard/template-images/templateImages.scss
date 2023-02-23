@@ -7,19 +7,76 @@
         color: #FFFFFF;
     }
 
-    .template-images-image {
+                                .template-images-tooltip {
         margin-left: 5px;
+
     }
 
     .template-images-data-wrapper {
         border: 1px solid #575757;
         border-radius: 5px;
+        display: grid;
+            grid-template-rows: auto auto auto;
+            grid-template-columns: repeat(auto-fit, minmax(33.33%, 1fr));
+            grid-auto-columns: repeat(auto-fit, minmax(33.33%, 1fr));
+            grid-auto-flow: column;
+            overflow-x: auto;
+        
+            &::-webkit-scrollbar {
+                height: 10px;
+            }
+        
+            &::-webkit-scrollbar-track {
+                -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+                border-radius: 17px;
+            }
+        
+            &::-webkit-scrollbar-thumb {
+                border-radius: 17px;
+                border: 3px solid #0D0D0D;
+                -webkit-box-shadow: inset 10px 10px 10px rgba(70, 70, 70, 1);
+            }
+        }
+        
+        .template {
+            color: black;
+            font-weight: 600;
+            background: #D7FF3A;
     }
 
     .template-images-data {
         display: flex;
-        // display: grid;
-        // grid-template-rows: 3;
-        // grid-template-columns: max-content;
+        border: 1px solid #575757;
+            padding: 10px;
+            cursor: pointer;
+        }
+        
+        .template-images-image-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 5px;
+        }
+        
+        .template-images-image {
+            width: 54px;
+            height: 54px;
+            background: #202020;
+            border-radius: 3px;
+            padding: 20px;
+            background: #202020;
+            border-radius: 3px;
+        }
+        
+        .template-images-badge-name {
+            font-weight: 500;
+            font-size: 14px;
+            color: #FFFFFF;
+        }
+        
+        .template-images-badge-description {
+            font-weight: 500;
+            font-size: 12px;
+            color: #9A9A9A;
     }
 }
