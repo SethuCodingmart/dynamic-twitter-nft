@@ -61,16 +61,12 @@ const selectTemplates = async ({ token }) => {
 
 
 export {
-<<<<<<< HEAD
     fetchTweetDetails,
     loginRoute,
     addBadge,
     getAllBadges,
     badgeStandings,
     selectTemplates
-}
-=======
-    fetchTweetDetails
 }
 
 const twitterId = localStorage.getItem("twitterId");
@@ -94,4 +90,3 @@ export const addCoupon = async (body) => {
   
   
 
->>>>>>> fc499d4f78cd4d016648e7afb584fd0fdd28da8e

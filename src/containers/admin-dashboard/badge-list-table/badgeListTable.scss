@@ -42,6 +42,12 @@
 
                     }
                 }
+                &:nth-child(3) {
+                    max-width: 230px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
             }
         }
 

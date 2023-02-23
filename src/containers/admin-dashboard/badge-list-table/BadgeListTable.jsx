@@ -4,6 +4,19 @@ import './badgeListTable.scss'
 const BadgeListTable = ({ tableHeaders, BadgeList }) => {
     const BASE_URL = process.env.REACT_APP_API_URL
 
+    const handleType = (type) => { 
+        if(type === "LU"){
+            return "Limited Use"
+        }else if (type === "UL"){
+            return "User Limited"
+        }else if (type === "LT"){
+            return "Limited Time"
+        }else if (type === "TL"){
+            return "Milestone"
+        }
+        return type
+    }
+
     return (
         <div className='badge-list-table-wrapper'>
             <table className="badge-list-table-container">
@@ -25,7 +38,9 @@ const BadgeListTable = ({ tableHeaders, BadgeList }) => {
                                 {tableHeaders.map((col, id) => {
                                     return (
                                         <td key={id} className="table-data">
-                                            {col.field === 'image' ? <img src={BASE_URL + '/' + row[col.field]} alt='badge' width={25} height={25} /> : row[col.field]}
+                                            {col.field === 'image' ? <img src={BASE_URL + '/' + row[col.field]} alt='badge' width={25} height={25} /> : 
+                                                handleType(row[col.field])
+                                            }
                                         </td>
                                     );
                                 })}
