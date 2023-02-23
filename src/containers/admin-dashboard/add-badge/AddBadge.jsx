@@ -1,13 +1,14 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import BackArrow from '../../../assets/admin-dashboard/add-badge-arrow.svg'
 import AddBadgeIcon from '../../../assets/admin-dashboard/add-badge-icon.svg'
 import Tooltip from '../../../assets/admin-dashboard/tooltip-icon.svg'
 import fileUpload from '../../../assets/admin-dashboard/file-upload-icon.svg'
 import Dropdown from '../drop-down/Dropdown'
 import { addBadge, selectTemplates } from '../../../services/api'
+import { Link } from 'react-router-dom'
 import './addBadge.scss'
 
-const AddBadge = ({ handleBackButton }) => {
+const AddBadge = () => {
     const token = localStorage.getItem('admin')
     const [value, setValue] = useState('LU');
 
@@ -18,14 +19,7 @@ const AddBadge = ({ handleBackButton }) => {
         { value: 'MS', label: 'Milestone' }
     ];
 
-    useEffect(() => {
-        templateImages()
-    }, [])
 
-    const templateImages = async () => {
-        const data = await selectTemplates({ token })
-        console.log(data);
-    }
 
     const handleChange = (event) => {
         setValue(event.target.value);
@@ -82,7 +76,7 @@ const AddBadge = ({ handleBackButton }) => {
                 </div>
 
                 <div className="dashboard-add-badge-back-button">
-                    <img src={BackArrow} alt="back" style={{ cursor: 'pointer' }} onClick={handleBackButton} className='dashboard-add-badge-back-button-images' />
+                    <Link to="/admin-dashboard"><img src={BackArrow} alt="back" style={{ cursor: 'pointer' }} className='dashboard-add-badge-back-button-images' /></Link>
                     <img src={AddBadgeIcon} alt="icon" className='dashboard-add-badge-back-button-images' />
                     <p className='dashboard-add-badge-back-button-text'>Add Badge</p>
                 </div>

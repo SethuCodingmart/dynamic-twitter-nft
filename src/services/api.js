@@ -8,12 +8,12 @@ const fetchTweetDetails = async (twitterId) => {
 }
 
 const loginRoute = async ({ username, password }) => {
-    const token = await axios.post(`https://revisequest.loca.lt/api/auth/signin`, { username, password })
+    const token = await axios.post(`${BASE_URL}/api/auth/signin`, { username, password })
     return token
 }
 
 const addBadge = async (data, { token }) => {
-    const code = await axios.post(`https://revisequest.loca.lt/api/admin/addBadge`,
+    const code = await axios.post(`${BASE_URL}/api/admin/addBadge`,
         data,
         {
             headers: {
@@ -25,7 +25,7 @@ const addBadge = async (data, { token }) => {
 }
 
 const getAllBadges = async ({ token }) => {
-    const allBadges = await axios.get(`https://revisequest.loca.lt/api/admin/allBadges`,
+    const allBadges = await axios.get(`${BASE_URL}/api/admin/allBadges`,
         {
             headers: {
                 Authorization: `Bearer ${token}`
@@ -36,7 +36,7 @@ const getAllBadges = async ({ token }) => {
 }
 
 const badgeStandings = async ({ token }) => {
-    const standings = await axios.get(`https://revisequest.loca.lt/api/admin/badgeStandings`,
+    const standings = await axios.get(`${BASE_URL}/api/admin/badgeStandings`,
         {
             headers: {
                 Authorization: `Bearer ${token}`
@@ -48,7 +48,7 @@ const badgeStandings = async ({ token }) => {
 
 
 const selectTemplates = async ({ token }) => {
-    const standings = await axios.get(`https://revisequest.loca.lt/api/admin/templates`,
+    const standings = await axios.get(`${BASE_URL}/api/admin/templates`,
         {
             headers: {
                 Authorization: `Bearer ${token}`
@@ -61,7 +61,6 @@ const selectTemplates = async ({ token }) => {
 
 
 export {
-<<<<<<< HEAD
     fetchTweetDetails,
     loginRoute,
     addBadge,
@@ -69,21 +68,18 @@ export {
     badgeStandings,
     selectTemplates
 }
-=======
-    fetchTweetDetails
-}
 
 const twitterId = localStorage.getItem("twitterId");
 
 export const fetchBadges = async () => {
-    const res = await axios.get(`https://revisequest.loca.lt/api/user/all/badge/${twitterId}`)
+    const res = await axios.get(`${BASE_URL}/api/user/all/badge/${twitterId}`)
     return res;
 }
 
 export const addCoupon = async (body) => {
     try {
       const resp = await axios.post(
-        `https://revisequest.loca.lt/api/user/claim`,
+          `${BASE_URL}/api/user/claim`,
         body
       );
       return resp;
@@ -94,4 +90,3 @@ export const addCoupon = async (body) => {
   
   
 
->>>>>>> fc499d4f78cd4d016648e7afb584fd0fdd28da8e

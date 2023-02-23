@@ -1,6 +1,12 @@
     .dashboard-add-badge-wrapper {
         background-color: #121212;
-        min-height: 100vh;
+        overflow-y: auto;
+            flex: 7.8;
+            position: sticky;
+        
+            &::-webkit-scrollbar {
+                display: none;
+            }
 
         .add-badge-user-name {
             font-weight: 500;
@@ -139,8 +145,7 @@
             margin-right: 15px;
         }
 
-        .add-badge-form-limited-use-claims {
-            // margin: 0;   
+                .add-badge-form-limited-use-claims {
             margin-right: 15px;
         }
 

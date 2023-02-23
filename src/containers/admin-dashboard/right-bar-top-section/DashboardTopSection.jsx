@@ -39,13 +39,9 @@ const DashboardTopSection = () => {
           </div>
         </div>
         <div className="total-users user-nft-details">
-          <p className='name'>TOTAL USERS</p>
+          <p className='name'>BADGES CREATED</p>
           <div className='number-stats'>
             <p className='number'>121,522</p>
-            <p className="stats">
-              <img src={IncreaseIcon} alt="icon" className='icon' />
-              <span>25%</span>
-            </p>
           </div>
         </div>
       </div>

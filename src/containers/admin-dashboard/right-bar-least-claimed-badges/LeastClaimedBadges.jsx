@@ -21,8 +21,8 @@ const RightBarLeastClaimedBadges = ({ token }) => {
                     Least CLAIMED Badges
                 </div>
                 <div className='right-bar-least-badge-details'>
-                    {leastBadge.map((item) => (
-                        <div style={{ textAlign: 'center' }} >
+                    {leastBadge.map((item, id) => (
+                        <div style={{ textAlign: 'center' }} key={id}>
                             <div className="right-bar-least-badge-images">
                                 <img src={BASE_URL + '/' + item.image} alt="badge" height='50px' width='50px' />
                             </div>

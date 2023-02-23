@@ -1,11 +1,8 @@
 import React from 'react';
-
 import Tick from '../../../assets/images/modal/tick.svg';
-
 import cancleIcon from "../../../assets/images/modal/Ellipse 21.svg";
-
+import MyBadge from '../../../containers/admin-dashboard/myBadge/MyBadge';
 import './badgeAdded.scss';
-import MyBadge from '../../myBadge';
 
 const BadgeAdded = () => {
   return (

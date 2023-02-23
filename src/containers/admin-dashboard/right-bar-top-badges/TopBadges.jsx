@@ -23,8 +23,8 @@ const RightBarTopBadges = ({ token }) => {
                     Top Badges
                 </div>
                 <div className='right-bar-top-badge-details'>
-                    {topBadge.map((item) => (
-                        <div style={{ textAlign: 'center' }} >
+                    {topBadge.map((item, id) => (
+                        <div style={{ textAlign: 'center' }} key={id}>
                             <div className="right-bar-top-badge-images">
                                 <img src={BASE_URL + '/' + item.image} alt="badge" width={50} height={50} />
                             </div>

@@ -10,8 +10,8 @@ const Dropdown = ({ options, value, handleChange }) => {
                 <p>Type* <img src={Tooltip} alt="info" /></p>
                 <div className='select-dropdown'>
                     <select value={value} onChange={handleChange} name='type'>
-                        {options.map((option) => (
-                            <option value={option.value} >{option.label}</option>
+                        {options.map((option, id) => (
+                            <option value={option.value} key={id}>{option.label}</option>
                         ))}
                     </select>
                 </div>

@@ -3,11 +3,14 @@ import Logo from '../../../assets/admin-dashboard/logo.svg'
 import DashboardIcon from '../../../assets/admin-dashboard/dashboard-icon.svg'
 import ContactIcon from '../../../assets/admin-dashboard/contact-icon.svg'
 import AddBadgeIcon from '../../../assets/admin-dashboard/add-badge-icon.svg'
-
+import { Link } from 'react-router-dom'
 import './leftBar.scss'
 
 const AdminDashboardLeftBar = () => {
-    const [toggleState, setToggleState] = useState(1)
+
+    const handleOnclick = (event) => {
+        event.target.classList.add('side-navbar');
+    }
 
     return (
         <div className='admin-dashboard-left-bar-wrapper'>
@@ -17,16 +20,21 @@ const AdminDashboardLeftBar = () => {
                 </div>
                 <div className="button-list">
                     <ul>
-                        <li onClick={() => setToggleState(1)} className={toggleState === 1 ? 'side-navbar' : ''}>
-                            <div>
-                                <img src={DashboardIcon} alt="icon" className='icon' />
-                            </div>
-                            <div>
-                                Dashboard
-                            </div>
-                        </li>
+                        <div onClick={handleOnclick}>
+                            <Link to='/admin-dashboard' >
+                                <li>
+                                    <div>
+                                        <img src={DashboardIcon} alt="icon" className='icon' />
+                                    </div>
+                                    <div>
+                                        Dashboard
+                                    </div>
+                                </li>
+                            </Link>
+                        </div>
 
-                        <li onClick={() => setToggleState(2)} className={toggleState === 2 ? 'side-navbar' : ''}>
+                        <Link to='/all-badges' onClick={handleOnclick}>
+                            <li>
                             <div>
                                 <img src={AddBadgeIcon} alt="icon" className='icon' />
                             </div>
@@ -34,8 +42,9 @@ const AdminDashboardLeftBar = () => {
                                 My Badges
                             </div>
                         </li>
+                        </Link>
 
-                        <li onClick={() => setToggleState(3)} className={toggleState === 3 ? 'side-navbar' : ''}>
+                        <li onClick={handleOnclick}>
                             <div>
                                 <img src={ContactIcon} alt="icon" className='icon' />
                             </div>
